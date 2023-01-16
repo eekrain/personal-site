@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Counter from "../components/Counter";
+import { NavItem } from "../components/NavItem";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,6 +14,7 @@ import Counter from "../components/Counter";
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
     <Counter client:visible />
+    <NavItem activeLink="home" client:visible>Hai</NavItem>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://docs.astro.build/"
