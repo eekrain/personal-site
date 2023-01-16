@@ -8,7 +8,7 @@ export default function SolidCounter({ children }: { children?: JSXElement }) {
 
   return (
     <>
-      <div class="counter">
+      <div class="counter bg-blue-900">
         <button onClick={subtract}>-</button>
         <pre>{count()}</pre>
         <button onClick={add}>+</button>
