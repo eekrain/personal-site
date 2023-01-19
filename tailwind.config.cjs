@@ -12,6 +12,9 @@ module.exports = {
         body: "#fafafa",
         title: "#666",
       },
+      boxShadow: {
+        menu: "0 -1px 4px rgb(0 0 0 / 0.15)",
+      },
       maxWidth: {
         lg768: "768px",
       },

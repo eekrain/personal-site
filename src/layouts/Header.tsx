@@ -8,6 +8,7 @@ import {
 import { MY_BREAKPOINTS } from "../constants/myBreakpoints";
 
 const [activeLink, setActiveLink] = createSignal("#contact");
+const [toggleMenu, setToggleMenu] = createSignal(false);
 
 export const Header: Component<{}> = (props) => {
   const matches = createBreakpoints(MY_BREAKPOINTS);
@@ -17,18 +18,32 @@ export const Header: Component<{}> = (props) => {
       classList={{
         "bottom-0": (matches.xs || matches.sm) && !matches.md,
         "top-0": matches.md,
+        "w-full fixed left-0 bg-white": true,
       }}
-      class="w-full fixed left-0 bg-yellow-300"
     >
-      <nav class="max-w-lg768 mx-auto flex justify-between items-center gap-x-4 h-16 md:mx-6 bg-violet-200">
-        <a href="/" class="font-medium text-title">
+      <nav
+        classList={{
+          "rounded-t-2xl bg-body mx-6 md:max-w-lg768  flex justify-between items-center md:gap-x-4 h-16 md:bg-white md:mx-auto md:rounded-none":
+            true,
+          "px-6": matches.md && !matches.lg,
+        }}
+      >
+        <a href="#" class="font-medium text-title ">
           Eka
         </a>
 
         <div
           classList={{
-            "fixed bottom-0 left-0 w-full bg-red-200 pt-8 pb-16 px-6 rounded-t-2xl z-50 shadow-2xl":
+            "fixed left-0 w-full bg-body pt-8 pb-16 px-6 rounded-t-2xl z-50 shadow-menu":
               (matches.xs || matches.sm) && !matches.md,
+            "bottom-0":
+              (matches.xs || matches.sm) &&
+              !matches.md &&
+              toggleMenu() === true,
+            "-bottom-full":
+              (matches.xs || matches.sm) &&
+              !matches.md &&
+              toggleMenu() === false,
           }}
         >
           <ul
@@ -57,10 +72,13 @@ export const Header: Component<{}> = (props) => {
             </NavItem>
           </ul>
 
-          <i classList={{ "uil uil-times": true, hidden: true }} />
+          <i
+            class="absolute right-5 bottom-2 text-2xl"
+            classList={{ "uil uil-times md:hidden": true }}
+          />
         </div>
 
-        <div classList={{ hidden: true }}>
+        <div class="md:hidden">
           <i class="uil uil-apps" />
         </div>
       </nav>
