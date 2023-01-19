@@ -13,8 +13,8 @@ const [activeLink, setActiveLink] = createSignal("#contact");
 
 export const Header: Component<{}> = (props) => {
   return (
-    <header class="bottom-0 left-0 w-full fixed bg-white lg:top-0">
-      <nav class="flex justify-between items-center rounded-t-2xl bg-body mx-6 lg:gap-x-4 h-16 lg:bg-white lg:rounded-none lg:container lg:px-6 xl:px-01">
+    <header class="bottom-0 left-0 w-full fixed bg-white lg:top-0 h-16">
+      <nav class="flex justify-between items-center rounded-t-2xl bg-body mx-6 lg:mx-auto lg:px-4 lg:gap-x-4  h-16 lg:bg-white lg:rounded-none lg:container lg:max-w-lg968 xl:px-0">
         <a href="#" class="font-medium text-title ">
           Eka
         </a>

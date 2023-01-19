@@ -1,7 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Counter from "../components/Counter";
+import { Home } from "../layouts/Home";
 ---
 
-<Layout title="Welcome to Astro." />
+<Layout title="Welcome to Astro.">
+  <main
+    class="lg:container lg:max-w-lg968 mx-6 xl:mx-auto lg:px-4 lg:mx-0 xl:px-0"
+  >
+    <Home />
+  </main>
+</Layout>
