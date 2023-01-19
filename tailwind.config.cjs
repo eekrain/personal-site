@@ -8,6 +8,10 @@ module.exports = {
       center: true,
     },
     extend: {
+      colors: {
+        body: "#fafafa",
+        title: "#666",
+      },
       maxWidth: {
         lg768: "768px",
       },

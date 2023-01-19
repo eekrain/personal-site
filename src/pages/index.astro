@@ -2,19 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Counter from "../components/Counter";
-import { NavItem } from "../components/NavItem";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
+  <!-- <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br
       />
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
-    <Counter client:visible />
-    <NavItem activeLink="home" client:visible>Hai</NavItem>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://docs.astro.build/"
@@ -37,7 +34,7 @@ import { NavItem } from "../components/NavItem";
         body="Come say hi to our amazing Discord community. ❤️"
       />
     </ul>
-  </main>
+  </main> -->
 </Layout>
 
 <style>

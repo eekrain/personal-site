@@ -537,6 +537,13 @@
   dependencies:
     "@solid-primitives/utils" "^4.0.0"
 
+"@solid-primitives/event-listener@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/event-listener/-/event-listener-2.2.5.tgz#383018f2485c757206a4eb3435d6a384d54eb298"
+  integrity sha512-oso8DYLQbHxkSneQIB/vxjigV/1sb0qJA7BJecBljjVMwTB2n+sMcK6BSPojwfMGFgPR+F8ZvBEZFb31sW5ANg==
+  dependencies:
+    "@solid-primitives/utils" "^4.0.1"
+
 "@solid-primitives/immutable@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@solid-primitives/immutable/-/immutable-0.1.4.tgz#8876331fc31be3e7250700174d714cc9ee59bd95"
@@ -552,6 +559,15 @@
     "@solid-primitives/event-listener" "^2.2.4"
     "@solid-primitives/rootless" "^1.2.1"
     "@solid-primitives/utils" "^4.0.0"
+
+"@solid-primitives/media@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/media/-/media-2.0.5.tgz#730cdb5b713d368af1c33a708282993ac089de7c"
+  integrity sha512-Vln3P8wZEAgLK+et7Q85C2bD8SpEbQ0MZKdMA+VzB8p1PQ8mvgmbM03ZZjMjFyC54sr4p9SLoZkx9AJWYEC6Aw==
+  dependencies:
+    "@solid-primitives/event-listener" "^2.2.5"
+    "@solid-primitives/rootless" "^1.2.2"
+    "@solid-primitives/utils" "^4.0.1"
 
 "@solid-primitives/refs@^0.3.4":
   version "0.3.4"
@@ -569,10 +585,22 @@
   dependencies:
     "@solid-primitives/utils" "^4.0.0"
 
+"@solid-primitives/rootless@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/rootless/-/rootless-1.2.2.tgz#553528c5fb7436ff38085ae1b9e15b9d5bfd1938"
+  integrity sha512-ZzwQuSeFtxlb6jrHDZB9WIPTZjDTHOinx/xeC3Ey1Cpe7Rw1SMEbiVwpXzRnvghAPCiXqd1x78tvekAhKnBGaw==
+  dependencies:
+    "@solid-primitives/utils" "^4.0.1"
+
 "@solid-primitives/utils@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@solid-primitives/utils/-/utils-4.0.0.tgz#3c592287519dc885290d134f8aff3f0f6f4b4720"
   integrity sha512-fGsJy8Z8YiwogpiezD7TWjI62UCb0JAHJWdoXWGrggrn4bfToZotKkabiB0IVFMkWVE1ZcrkvZT3bkmqGnK0ng==
+
+"@solid-primitives/utils@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/utils/-/utils-4.0.1.tgz#3c164f289ee1da36698a6b9a6fb449c8787112c3"
+  integrity sha512-06fSyBair7ZxCquMjIqJes29aNg65X776TVw4EUN7PBtdWsGUeIZ9F/H4ek7yrDSxaSDaPHeye5knEYsYAq2gA==
 
 "@swc/helpers@^0.4.14":
   version "0.4.14"
