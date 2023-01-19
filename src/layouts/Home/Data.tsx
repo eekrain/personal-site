@@ -3,14 +3,14 @@ import { Button } from "../../components/Button";
 
 export const Data: Component<{}> = (props) => {
   return (
-    <div class="home__data">
-      <h1 class="home__title text-4xl inline-flex text-title font-semibold mb-2 items-center">
+    <div class="home__data col-span-2 lg:col-span-1">
+      <h1 class="text-3xl md:text-4xl inline-block relative text-title font-semibold mb-3 lg:mb-2 align-middle">
         Ardian Eka Candra <HandIcon />
       </h1>
-      <h3 class="home__subtitle xl:pl-20 lg:pl-14 before:xl:w-[70px] before:lg:w-[40px] text-title font-semibold text-lg mb-4">
+      <h3 class="home__subtitle xl:pl-20 lg:pl-14 before:xl:w-[70px] before:lg:w-[40px] text-title font-semibold text-lg mb-5 lg:mb-4">
         Full-Stack Developer
       </h3>
-      <p class="max-w-[400px] mb-12 text-base">
+      <p class="max-w-[400px] mb-8 md:mb-12 text-base">
         I'm a full-stack developer based in Yogyakarta, ID. I'm passionate and
         dedicated to my work.
       </p>
@@ -28,7 +28,7 @@ const HandIcon = () => (
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    class="lg:w-10 lg:h-10 xl:w-8 xl:h-8 ml-2"
+    class="lg:w-10 lg:h-10 xl:w-8 xl:h-8 ml-2 inline-block"
   >
     <path
       d="M25.4995 32.0305L31.3495 33.1555L36.1495 8.48051C36.4495 6.83051 35.3995 5.18051 33.8245 4.88051C32.1745 4.58051 30.5995 5.70551 30.2995 7.35551L25.4995 32.0305Z"
