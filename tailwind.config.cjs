@@ -8,6 +8,12 @@ module.exports = {
       center: true,
     },
     extend: {
+      screens: {
+        sm: "350px",
+        md: "576px",
+        lg: "768px",
+        xl: "992px",
+      },
       colors: {
         body: "#fafafa",
         title: "#666",

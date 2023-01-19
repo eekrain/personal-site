@@ -1,3 +1,4 @@
+import { Button } from "@kobalte/core";
 import { createBreakpoints } from "@solid-primitives/media";
 import {
   Component,
@@ -7,51 +8,29 @@ import {
 } from "solid-js";
 import { MY_BREAKPOINTS } from "../constants/myBreakpoints";
 
-const [activeLink, setActiveLink] = createSignal("#contact");
 const [toggleMenu, setToggleMenu] = createSignal(false);
+const [activeLink, setActiveLink] = createSignal("#contact");
 
 export const Header: Component<{}> = (props) => {
-  const matches = createBreakpoints(MY_BREAKPOINTS);
-
   return (
-    <header
-      classList={{
-        "bottom-0": (matches.xs || matches.sm) && !matches.md,
-        "top-0": matches.md,
-        "w-full fixed left-0 bg-white": true,
-      }}
-    >
-      <nav
-        classList={{
-          "rounded-t-2xl bg-body mx-6 md:max-w-lg768  flex justify-between items-center md:gap-x-4 h-16 md:bg-white md:mx-auto md:rounded-none":
-            true,
-          "px-6": matches.md && !matches.lg,
-        }}
-      >
+    <header class="bottom-0 left-0 w-full fixed bg-white lg:top-0">
+      <nav class="flex justify-between items-center rounded-t-2xl bg-body mx-6 lg:gap-x-4 h-16 lg:bg-white lg:rounded-none lg:container lg:px-6 xl:px-01">
         <a href="#" class="font-medium text-title ">
           Eka
         </a>
 
         <div
+          class=""
           classList={{
-            "fixed left-0 w-full bg-body pt-8 pb-16 px-6 rounded-t-2xl z-50 shadow-menu":
-              (matches.xs || matches.sm) && !matches.md,
-            "bottom-0":
-              (matches.xs || matches.sm) &&
-              !matches.md &&
-              toggleMenu() === true,
-            "-bottom-full":
-              (matches.xs || matches.sm) &&
-              !matches.md &&
-              toggleMenu() === false,
+            "fixed left-0 w-full bg-body pt-8 pb-16 px-6 rounded-t-2xl z-50 shadow-menu transition-all lg:transition-none duration-300":
+              true,
+            "lg:static lg:w-auto lg:bg-white lg:p-0 lg:rounded-none lg:z-0 lg:shadow-none":
+              true,
+            "-bottom-full": toggleMenu() === false,
+            "bottom-0": toggleMenu() === true,
           }}
         >
-          <ul
-            class="flex gap-8 "
-            classList={{
-              "grid grid-cols-3": (matches.xs || matches.sm) && !matches.md,
-            }}
-          >
+          <ul class="grid grid-cols-3 gap-8 lg:flex">
             <NavItem href="#home" iconName="uil-estate">
               Home
             </NavItem>
@@ -72,15 +51,20 @@ export const Header: Component<{}> = (props) => {
             </NavItem>
           </ul>
 
-          <i
-            class="absolute right-5 bottom-2 text-2xl"
-            classList={{ "uil uil-times md:hidden": true }}
-          />
+          <Button.Root
+            class="lg:hidden absolute right-6 bottom-2 text-2xl cursor-pointer"
+            onPress={() => setToggleMenu(() => false)}
+          >
+            <i class="uil uil-times text-title hover:text-black transition-all duration-300" />
+          </Button.Root>
         </div>
 
-        <div class="md:hidden">
-          <i class="uil uil-apps" />
-        </div>
+        <Button.Root
+          class="lg:hidden transition-all duration-300"
+          onPress={() => setToggleMenu((prev) => true)}
+        >
+          <i class="uil uil-apps text-title hover:text-black transition-all duration-300" />
+        </Button.Root>
       </nav>
     </header>
   );
@@ -100,7 +84,7 @@ export const NavItem: ParentComponent<{
           "text-black": activeLink() === props.href,
         }}
       >
-        <i class={`uil ${props.iconName} md:hidden`} />
+        <i class={`uil ${props.iconName} lg:hidden`} />
         {props.children}
       </a>
     </li>
