@@ -18,7 +18,7 @@ export const Header: Component<{}> = (props) => {
         "bottom-0": (matches.xs || matches.sm) && !matches.md,
         "top-0": matches.md,
       }}
-      class="w-full fixed left-0  bg-yellow-300"
+      class="w-full fixed left-0 bg-yellow-300"
     >
       <nav class="max-w-lg768 mx-auto flex justify-between items-center gap-x-4 h-16 md:mx-6 bg-violet-200">
         <a href="/" class="font-medium text-title">
