@@ -4,6 +4,7 @@ export const Button: ParentComponent<{
   href?: string;
   iconName?: string;
   icon?: JSX.Element;
+  download?: string;
 }> = (props) => {
   return (
     <a
