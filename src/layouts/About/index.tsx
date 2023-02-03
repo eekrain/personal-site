@@ -17,7 +17,7 @@ export const About: Component<{}> = (props) => {
         />
         <div class="about__data text-center xl:text-start">
           <Info />
-          <p class="about__description p-0 lg:px-10 lg:py-0 xl:pr-16 mb-8">
+          <p class="about__description p-0 md:px-10 lg:p-0 lg lg:py-0 xl:pr-16 mb-8">
             Full-Stack Developer, I build information system based on problems
             that my client has. I have years of experience and many client are
             happy with the projects carried out.
