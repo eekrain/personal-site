@@ -8,6 +8,7 @@ export const Button: ParentComponent<{
 }> = (props) => {
   return (
     <a
+      download={props.download}
       href={props.href}
       class=" bg-title text-white py-5 px-8 rounded-2xl font-medium hover:bg-black transition-all duration-300"
       classList={{
