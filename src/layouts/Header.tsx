@@ -13,8 +13,8 @@ const [activeLink, setActiveLink] = createSignal("#contact");
 
 export const Header: Component<{}> = (props) => {
   return (
-    <header class="bottom-0 left-0 w-full fixed bg-white lg:top-0 h-16 z-50">
-      <nav class="flex justify-between items-center rounded-t-2xl bg-body mx-6 lg:mx-auto lg:px-4 lg:gap-x-4  h-16 lg:bg-white lg:rounded-none lg:container lg:max-w-lg968 xl:px-0 ">
+    <header class="fixed bottom-0 left-0 z-50 h-16 w-full bg-white lg:top-0">
+      <nav class="mx-6 flex h-16 items-center justify-between rounded-t-2xl bg-body lg:container lg:mx-auto  lg:max-w-lg968 lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0 ">
         <a href="#" class="font-medium text-title ">
           Eka
         </a>
@@ -52,18 +52,18 @@ export const Header: Component<{}> = (props) => {
           </ul>
 
           <Button.Root
-            class="lg:hidden absolute right-6 bottom-2 text-2xl cursor-pointer"
+            class="absolute right-6 bottom-2 cursor-pointer text-2xl lg:hidden"
             onPress={() => setToggleMenu(() => false)}
           >
-            <i class="uil uil-times text-title hover:text-black transition-all duration-300" />
+            <i class="uil uil-times text-title transition-all duration-300 hover:text-black" />
           </Button.Root>
         </div>
 
         <Button.Root
-          class="lg:hidden transition-all duration-300"
+          class="transition-all duration-300 lg:hidden"
           onPress={() => setToggleMenu((prev) => true)}
         >
-          <i class="uil uil-apps text-title hover:text-black transition-all duration-300" />
+          <i class="uil uil-apps text-title transition-all duration-300 hover:text-black" />
         </Button.Root>
       </nav>
     </header>
@@ -75,7 +75,7 @@ export const NavItem: ParentComponent<{
   href: string;
 }> = (props) => {
   return (
-    <li class="flex flex-col items-center text-gray-600 text-sm font-medium">
+    <li class="flex flex-col items-center text-sm font-medium text-gray-600">
       <a
         href={props.href}
         classList={{

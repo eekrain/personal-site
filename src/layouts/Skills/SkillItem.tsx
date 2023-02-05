@@ -9,7 +9,7 @@ export const SkillItem: Component<{
       <i class="bx bx-badge-check text-base text-title"></i>
 
       <div>
-        <h3 class="skills__name text-sm md:text-base font-medium text-title leading-4">
+        <h3 class="skills__name text-sm font-medium leading-4 text-title md:text-base">
           {props.name}
         </h3>
         <span class="skills__level text-xs">{props.level}</span>

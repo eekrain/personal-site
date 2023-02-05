@@ -10,7 +10,7 @@ export const Button: ParentComponent<{
     <a
       download={props.download}
       href={props.href}
-      class=" bg-title text-white py-5 px-8 rounded-2xl font-medium hover:bg-black transition-all duration-300"
+      class=" rounded-2xl bg-title py-5 px-8 font-medium text-white transition-all duration-300 hover:bg-black"
       classList={{
         "inline-block": props.icon || props.iconName ? false : true,
         "inline-flex items-center": props.icon || props.iconName ? true : false,

@@ -3,8 +3,8 @@ import { SkillItem } from "./SkillItem";
 
 export const BackEnd: Component<{}> = (props) => {
   return (
-    <div class="skills__content bg-white border border-gray-100 py-8 px-16 rounded-3xl">
-      <h3 class="skills__title font-medium text-title text-center mb-6">
+    <div class="skills__content rounded-3xl border border-gray-100 bg-white py-8 px-16">
+      <h3 class="skills__title mb-6 text-center font-medium text-title">
         Back-End Developer
       </h3>
       <div class="skills__box flex justify-center gap-x-10">

@@ -5,19 +5,19 @@ import { Info } from "./Info";
 export const About: Component<{}> = (props) => {
   return (
     <section class="about section" id="about">
-      <h2 class="section__title text-4xl text-title text-center">About Me</h2>
-      <span class="section__subtitle block text-lg text-center mb-12 lg:mb-16">
+      <h2 class="section__title text-center text-4xl text-title">About Me</h2>
+      <span class="section__subtitle mb-12 block text-center text-lg lg:mb-16">
         My introduction
       </span>
-      <div class="about__container container grid grid-cols-1 xl:grid-cols-2 items-center gap-y-10 xl:gap-x-16 mx-auto">
+      <div class="about__container container mx-auto grid grid-cols-1 items-center gap-y-10 xl:grid-cols-2 xl:gap-x-16">
         <img
           src="/img/about.jpg"
           alt="About image"
-          class="about__img w-[225px] xl:w-[350px] rounded-3xl justify-self-center"
+          class="about__img w-[225px] justify-self-center rounded-3xl xl:w-[350px]"
         />
         <div class="about__data text-center xl:text-start">
           <Info />
-          <p class="about__description p-0 md:px-10 lg:p-0 lg lg:py-0 xl:pr-16 mb-8">
+          <p class="about__description lg mb-8 p-0 md:px-10 lg:p-0 lg:py-0 xl:pr-16">
             Full-Stack Developer, I build information system based on problems
             that my client has. I have years of experience and many client are
             happy with the projects carried out.

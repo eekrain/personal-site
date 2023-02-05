@@ -2,10 +2,10 @@ import { Component } from "solid-js";
 
 export const ScrollDown: Component<{}> = (props) => {
   return (
-    <div class="home_scroll hidden lg:block lg:ml-24 xl:ml-28">
+    <div class="home_scroll hidden lg:ml-24 lg:block xl:ml-28">
       <a href="" class="home_scroll-button inline-flex items-center">
         <ScrollIcon />
-        <span class="text-title font-medium mr-1 ml-[2px]">Scroll Down</span>
+        <span class="mr-1 ml-[2px] font-medium text-title">Scroll Down</span>
         <i class="uil uil-arrow-down text-xl text-title" />
       </a>
     </div>

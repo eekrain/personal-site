@@ -6,21 +6,21 @@ export const Social: Component<{}> = (props) => {
       <a
         href="https://www.linkedin.com/"
         target="_blank"
-        class="home-social-icon text-title text-xl hover:text-black transition-all duration-300"
+        class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
       >
         <i class="uil uil-linkedin" />
       </a>
       <a
         href="https://github.com/eekrain"
         target="_blank"
-        class="home-social-icon text-title text-xl hover:text-black transition-all duration-300"
+        class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
       >
         <i class="uil uil-github" />
       </a>
       <a
         href="https://www.instagram.com/eekrain"
         target="_blank"
-        class="home-social-icon text-title text-xl hover:text-black transition-all duration-300"
+        class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
       >
         <i class="uil uil-instagram" />
       </a>
