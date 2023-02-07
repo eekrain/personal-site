@@ -6,7 +6,7 @@ export const About: Component<{}> = (props) => {
   return (
     <section class="about section" id="about">
       <h2 class="section__title text-center text-4xl text-title">About Me</h2>
-      <span class="section__subtitle mb-12 block text-center text-lg lg:mb-16">
+      <span class="section__subtitle mb-12 block text-center lg:mb-16">
         My introduction
       </span>
       <div class="about__container container mx-auto grid grid-cols-1 items-center gap-y-10 xl:grid-cols-2 xl:gap-x-16">

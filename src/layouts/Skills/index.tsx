@@ -9,7 +9,7 @@ export const Skills: Component<{}> = (props) => {
       id="skills"
     >
       <h2 class="section__title text-center text-4xl text-title">Skills</h2>
-      <span class="section__subtitle mb-12 block text-center text-lg lg:mb-16">
+      <span class="section__subtitle mb-12 block text-center lg:mb-16">
         My Technical Level
       </span>
       <div class="skills__container container mx-auto grid justify-center gap-y-8  md:grid-cols-1 lg:grid-cols-[max-content] xl:grid-cols-[repeat(2,_350px)] xl:gap-x-12 xl:gap-y-0">
