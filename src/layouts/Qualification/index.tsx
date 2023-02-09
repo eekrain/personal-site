@@ -8,7 +8,7 @@ export const Qualification: Component<{}> = (props) => {
     console.log("The selectedTab is now", selectedTab());
   });
   return (
-    <section class="qualification section">
+    <section class="qualification section pt-20 pb-20 lg:mb-16 lg:pt-24 lg:pb-0 xl:mb-24">
       <h2 class="section__title text-center text-4xl text-title">
         Qualification
       </h2>

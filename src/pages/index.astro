@@ -4,6 +4,7 @@ import { Home } from "../layouts/Home";
 import { About } from "../layouts/About";
 import { Skills } from "../layouts/Skills";
 import { Qualification } from "../layouts/Qualification";
+import { Contact } from "../layouts/Contact";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,5 +15,6 @@ import { Qualification } from "../layouts/Qualification";
     <About />
     <Skills />
     <Qualification client:idle />
+    <Contact client:idle />
   </main>
 </Layout>
