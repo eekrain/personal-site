@@ -1,14 +1,20 @@
-import { Component, createSignal, Show } from "solid-js";
-import { Button } from "../../components/Button";
-import { SendIcon } from "../../components/SendIcon";
+import { createVisibilityObserver } from "@solid-primitives/intersection-observer";
+import { Component, createEffect, createSignal } from "solid-js";
+import { setActivePage } from "../../utils/activePage";
 import { ContactForm } from "./ContactForm";
 
 export const Contact: Component<{}> = (props) => {
+  let section: HTMLElement | undefined;
+
+  const visible = createVisibilityObserver({ threshold: 0.4 })(() => section);
+
+  createEffect(() => {
+    if (visible()) setActivePage("contact");
+  });
+
   return (
-    <section
-      id="contact"
-      class="contact section pt-20 pb-20 lg:mb-16 lg:pt-24 lg:pb-0 xl:mb-24"
-    >
+    <section ref={section} class="contact">
+      <div class="relative mt-24 lg:-top-16" id="contact" />
       <h2 class="section__title text-center text-4xl text-title">Contact</h2>
       <span class="section__subtitle mb-12 block text-center lg:mb-16">
         Get in touch

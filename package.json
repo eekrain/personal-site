@@ -20,6 +20,7 @@
     "@felte/solid": "^1.2.7",
     "@felte/validator-zod": "^1.0.13",
     "@kobalte/core": "^0.3.1",
+    "@solid-primitives/intersection-observer": "^2.0.6",
     "@solid-primitives/media": "^2.0.5",
     "astro": "^2.0.9",
     "solid-hcaptcha": "^0.2.6",

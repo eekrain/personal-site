@@ -110,25 +110,6 @@ export const ContactForm: Component<{}> = () => {
       >
         Send Message
       </Button>
-
-      {/* <button
-        type="button"
-        onClick={() => {
-          toast.success("Message succesfully sent!", {
-            duration: 5000,
-            position: "bottom-center",
-          });
-        }}
-      >
-        kontol
-      </button> */}
-
-      <h1>Current isSubmitting</h1>
-      <pre>{JSON.stringify(isSubmitting(), null, 2)}</pre>
-      {/* <h1>Current data shape</h1>
-      <pre>{JSON.stringify(data(), null, 2)}</pre>
-      <h1>Current error shape</h1>
-      <pre>{JSON.stringify(errors(), null, 2)}</pre> */}
     </form>
   );
 };

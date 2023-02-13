@@ -7,11 +7,18 @@ import {
   createEffect,
 } from "solid-js";
 import { MY_BREAKPOINTS } from "../constants/myBreakpoints";
+import { activePage, PageIds } from "../utils/activePage";
 
 const [toggleMenu, setToggleMenu] = createSignal(false);
-const [activeLink, setActiveLink] = createSignal("#contact");
 
 export const Header: Component<{}> = (props) => {
+  createEffect(() => {
+    console.log(
+      "🚀 ~ file: Header.tsx:19 ~ createEffect ~ activePage",
+      activePage()
+    );
+  });
+
   return (
     <header class="fixed bottom-0 left-0 z-50 h-16 w-full bg-white lg:top-0">
       <nav class="mx-6 flex h-16 items-center justify-between rounded-t-2xl bg-body lg:container lg:mx-auto  lg:max-w-lg968 lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0 ">
@@ -31,22 +38,22 @@ export const Header: Component<{}> = (props) => {
           }}
         >
           <ul class="grid grid-cols-3 gap-8 lg:flex">
-            <NavItem href="#home" iconName="uil-estate">
+            <NavItem pageId="home" iconName="uil-estate">
               Home
             </NavItem>
-            <NavItem href="#about" iconName="uil-user">
+            <NavItem pageId="about" iconName="uil-user">
               About
             </NavItem>
-            <NavItem href="#skills" iconName="uil-file-alt">
+            <NavItem pageId="skills" iconName="uil-file-alt">
               Skills
             </NavItem>
-            <NavItem href="#services" iconName="uil-briefcase-alt">
+            {/* <NavItem pageId="services" iconName="uil-briefcase-alt">
               Services
             </NavItem>
-            <NavItem href="#portfolio" iconName="uil-scenery">
+            <NavItem pageId="portfolio" iconName="uil-scenery">
               Portfolio
-            </NavItem>
-            <NavItem href="#contact" iconName="uil-message">
+            </NavItem> */}
+            <NavItem pageId="contact" iconName="uil-message">
               Contact
             </NavItem>
           </ul>
@@ -69,19 +76,21 @@ export const Header: Component<{}> = (props) => {
     </header>
   );
 };
+console.log("🚀 ~ file: Header.tsx:75 ~ activePage()", activePage());
+console.log("🚀 ~ file: Header.tsx:75 ~ activePage()", activePage());
 
 export const NavItem: ParentComponent<{
   iconName: string;
-  href: string;
+  pageId: PageIds;
 }> = (props) => {
   return (
     <li class="flex flex-col items-center text-sm font-medium text-gray-600">
       <a
-        href={props.href}
+        href={`#${props.pageId}`}
+        class="lg:hover:text-black"
         classList={{
           "flex flex-col items-center transition-all duration-300": true,
-          "hover:text-black": true,
-          "text-black": activeLink() === props.href,
+          "text-black": activePage() === props.pageId,
         }}
       >
         <i class={`uil ${props.iconName} lg:hidden`} />

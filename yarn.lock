@@ -691,6 +691,13 @@
   dependencies:
     "@solid-primitives/utils" "^4.0.0"
 
+"@solid-primitives/intersection-observer@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/intersection-observer/-/intersection-observer-2.0.6.tgz#b1bbb68248173809656e355e2850189cc9aa7138"
+  integrity sha512-aNsSx6LkT0J0NnF+3F45havRYsN8/lAYVoS9lTFz9g9Dg0/RXKpJe24tTGg0qK0lISg3b+cP0GTebjKryKD84g==
+  dependencies:
+    "@solid-primitives/utils" "^5.0.0"
+
 "@solid-primitives/media@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@solid-primitives/media/-/media-2.0.4.tgz#1c29d7d7525ea88b22203edb13197d50ac513b67"
@@ -746,6 +753,11 @@
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@solid-primitives/utils/-/utils-4.0.1.tgz#3c164f289ee1da36698a6b9a6fb449c8787112c3"
   integrity sha512-06fSyBair7ZxCquMjIqJes29aNg65X776TVw4EUN7PBtdWsGUeIZ9F/H4ek7yrDSxaSDaPHeye5knEYsYAq2gA==
+
+"@solid-primitives/utils@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/utils/-/utils-5.1.0.tgz#e1295ec3d091012795c02c8e8aa8916f40177185"
+  integrity sha512-1qmY9VaHWbEolBGhszqq7ziPJpXOXtcsQ14I7j8o/57bvfBQtwZ64idJrSdPBPIGzKSyPVZ1olYWz4yfitTBrA==
 
 "@swc/helpers@^0.4.14":
   version "0.4.14"

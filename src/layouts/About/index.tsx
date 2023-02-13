@@ -1,10 +1,24 @@
-import { Component } from "solid-js";
+import {
+  createViewportObserver,
+  createVisibilityObserver,
+} from "@solid-primitives/intersection-observer";
+import { Component, createEffect } from "solid-js";
 import { Button } from "../../components/Button";
+import { setActivePage } from "../../utils/activePage";
 import { Info } from "./Info";
 
 export const About: Component<{}> = (props) => {
+  let section: HTMLElement | undefined;
+
+  const visible = createVisibilityObserver({ threshold: 0.6 })(() => section);
+
+  createEffect(() => {
+    if (visible()) setActivePage("about");
+  });
+
   return (
-    <section class="about section" id="about">
+    <section ref={section} class="about section">
+      <div id="about" class="relative mt-24 lg:-top-16 lg:mt-0" />
       <h2 class="section__title text-center text-4xl text-title">About Me</h2>
       <span class="section__subtitle mb-12 block text-center lg:mb-16">
         My introduction
