@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import { BxBadgeCheck } from "../../components/Icons/BxBadgeCheck";
 
 export const SkillItem: Component<{
   name: string;
@@ -6,7 +7,9 @@ export const SkillItem: Component<{
 }> = (props) => {
   return (
     <div class="skills__data flex gap-x-2">
-      <i class="bx bx-badge-check text-base text-title"></i>
+      <span class="pt-1">
+        <BxBadgeCheck class="text-base text-title" />
+      </span>
 
       <div>
         <h3 class="skills__name text-sm font-medium leading-4 text-title md:text-base">

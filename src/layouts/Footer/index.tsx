@@ -1,4 +1,7 @@
 import { Component } from "solid-js";
+import { UilGithub } from "../../components/Icons/UilGithub";
+import { UilInstagram } from "../../components/Icons/UilInstagram";
+import { UilLinkedIn } from "../../components/Icons/UilLinkedIn";
 
 export const Footer: Component<{}> = (props) => {
   return (
@@ -32,21 +35,21 @@ export const Footer: Component<{}> = (props) => {
             target="_blank"
             class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-title text-lg text-white hover:bg-black"
           >
-            <i class="uil uil-linkedin" />
+            <UilLinkedIn />
           </a>
           <a
             href="https://github.com/eekrain"
             target="_blank"
             class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-title text-lg text-white hover:bg-black"
           >
-            <i class="uil uil-github" />
+            <UilGithub />
           </a>
           <a
             href="https://www.instagram.com/eekrain"
             target="_blank"
             class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-title text-lg text-white hover:bg-black"
           >
-            <i class="uil uil-instagram" />
+            <UilInstagram />
           </a>
         </div>
 

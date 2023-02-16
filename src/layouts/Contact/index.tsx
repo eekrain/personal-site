@@ -1,5 +1,8 @@
 import { createVisibilityObserver } from "@solid-primitives/intersection-observer";
 import { Component, createEffect, createSignal } from "solid-js";
+import { BxlMessenger } from "../../components/Icons/BxlMessenger";
+import { BxMailSend } from "../../components/Icons/BxMailSend";
+import { BxRightArrowAlt } from "../../components/Icons/BxRightArrowAlt";
 import { setActivePage } from "../../utils/activePage";
 import { ContactForm } from "./ContactForm";
 
@@ -30,13 +33,13 @@ export const Contact: Component<{}> = (props) => {
               title="Email"
               data="candra.ardianeka@gmail.com"
               href="mailto:candra.ardianeka@gmail.com"
-              iconClass="bx bx-mail-send"
+              Icon={(props) => <BxMailSend {...props} />}
             />
             <ContactCard
               title="Messenger"
               data="eekrain"
               href="https://m.me/eekrain"
-              iconClass="bx bxl-messenger"
+              Icon={(props) => <BxlMessenger {...props} />}
             />
           </div>
         </div>
@@ -57,14 +60,12 @@ const ContactCard: Component<{
   title: string;
   data: string;
   href: string;
-  iconClass?: string;
+  Icon: Component<IconProps>;
 }> = (props) => {
   const [btnHover, setBtnHover] = createSignal(false);
   return (
     <div class="contact__card rounded-xl border border-gray-100 bg-white p-4 text-center">
-      <i
-        class={`${props.iconClass} contact__card-icon text-3xl text-title`}
-      ></i>
+      <props.Icon class="contact__card-icon mb-4 inline-block text-3xl text-title" />
 
       <h3 class="contact__card-title text-sm font-medium">{props.title}</h3>
       <span class="contact__card-data mb-3 block text-sm">{props.data}</span>
@@ -76,10 +77,10 @@ const ContactCard: Component<{
         class="contact__button inline-flex items-center justify-center gap-x-1 text-sm hover:text-black"
       >
         Write me
-        <i
-          class="bx bx-right-arrow-alt contact__button-icon transition-all duration-300 "
+        <BxRightArrowAlt
+          class="contact__button-icon transition-all duration-300 "
           classList={{ "translate-x-1": btnHover() }}
-        ></i>
+        />
       </a>
     </div>
   );

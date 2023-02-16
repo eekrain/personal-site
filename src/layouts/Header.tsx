@@ -1,6 +1,18 @@
 import { Button } from "@kobalte/core";
 import { createScrollPosition } from "@solid-primitives/scroll";
-import { Component, createSignal, ParentComponent, createMemo } from "solid-js";
+import {
+  Component,
+  createSignal,
+  ParentComponent,
+  createMemo,
+  JSX,
+} from "solid-js";
+import { UilApps } from "../components/Icons/UilApps";
+import { UilEstate } from "../components/Icons/UilEstate";
+import { UilFileAlt } from "../components/Icons/UilFileAlt";
+import { UilMessage } from "../components/Icons/UilMessage";
+import { UilTimes } from "../components/Icons/UilTimes";
+import { UilUser } from "../components/Icons/UilUser";
 import { activePage, PageIds } from "../utils/activePage";
 
 const [toggleMenu, setToggleMenu] = createSignal(false);
@@ -39,22 +51,22 @@ export const Header: Component<{}> = (props) => {
           }}
         >
           <ul class="grid grid-cols-3 gap-8 lg:flex">
-            <NavItem pageId="home" iconName="uil-estate">
+            <NavItem pageId="home" Icon={() => <UilEstate />}>
               Home
             </NavItem>
-            <NavItem pageId="about" iconName="uil-user">
+            <NavItem pageId="about" Icon={() => <UilUser />}>
               About
             </NavItem>
-            <NavItem pageId="skills" iconName="uil-file-alt">
+            <NavItem pageId="skills" Icon={() => <UilFileAlt />}>
               Skills
             </NavItem>
-            {/* <NavItem pageId="services" iconName="uil-briefcase-alt">
+            {/* <NavItem pageId="services" Icon={() => <UilBriefcaseAlt />}>
               Services
             </NavItem>
-            <NavItem pageId="portfolio" iconName="uil-scenery">
+            <NavItem pageId="portfolio" Icon={() => <UilScenery />}>
               Portfolio
             </NavItem> */}
-            <NavItem pageId="contact" iconName="uil-message">
+            <NavItem pageId="contact" Icon={() => <UilMessage />}>
               Contact
             </NavItem>
           </ul>
@@ -63,7 +75,7 @@ export const Header: Component<{}> = (props) => {
             class="absolute right-6 bottom-2 cursor-pointer text-2xl lg:hidden"
             onPress={() => setToggleMenu(() => false)}
           >
-            <i class="uil uil-times text-title transition-all duration-300 hover:text-black" />
+            <UilTimes class="text-title transition-all duration-300 hover:text-black" />
           </Button.Root>
         </div>
 
@@ -71,7 +83,7 @@ export const Header: Component<{}> = (props) => {
           class="transition-all duration-300 lg:hidden"
           onPress={() => setToggleMenu((prev) => true)}
         >
-          <i class="uil uil-apps text-title transition-all duration-300 hover:text-black" />
+          <UilApps class="text-title transition-all duration-300 hover:text-black" />
         </Button.Root>
       </nav>
     </header>
@@ -81,7 +93,7 @@ console.log("🚀 ~ file: Header.tsx:75 ~ activePage()", activePage());
 console.log("🚀 ~ file: Header.tsx:75 ~ activePage()", activePage());
 
 export const NavItem: ParentComponent<{
-  iconName: string;
+  Icon: Component<IconProps>;
   pageId: PageIds;
 }> = (props) => {
   return (
@@ -94,7 +106,9 @@ export const NavItem: ParentComponent<{
           "text-black": activePage() === props.pageId,
         }}
       >
-        <i class={`uil ${props.iconName} lg:hidden`} />
+        <span class="lg:hidden">
+          <props.Icon />
+        </span>
         {props.children}
       </a>
     </li>

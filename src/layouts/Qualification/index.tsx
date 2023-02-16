@@ -5,6 +5,9 @@ import {
   createVisibilityObserver,
 } from "@solid-primitives/intersection-observer";
 import { setActivePage } from "../../utils/activePage";
+import { UilGraduationCap } from "../../components/Icons/UilGraduationCap";
+import { UilBriefcaseAlt } from "../../components/Icons/UilBriefcaseAlt";
+import { UilCalendarAlt } from "../../components/Icons/UilCalendarAlt";
 
 export const Qualification: Component<{}> = (props) => {
   const [selectedTab, setSelectedTab] = createSignal<"edu" | "exp">("edu");
@@ -40,7 +43,7 @@ export const Qualification: Component<{}> = (props) => {
                 "bg-title text-white hover:bg-black": selectedTab() === "edu",
               }}
             >
-              <i class="uil uil-graduation-cap qualification_icon text-2xl sm:mr-2 md:mr-4"></i>
+              <UilGraduationCap class="qualification_icon text-2xl sm:mr-2 md:mr-4" />
               Education
             </Tabs.Trigger>
             <Tabs.Trigger
@@ -51,7 +54,7 @@ export const Qualification: Component<{}> = (props) => {
                 "bg-title text-white hover:bg-black": selectedTab() === "exp",
               }}
             >
-              <i class="uil uil-briefcase-alt qualification_icon text-2xl sm:mr-2 md:mr-4"></i>
+              <UilBriefcaseAlt class="qualification_icon text-2xl sm:mr-2 md:mr-4" />
               Experience
             </Tabs.Trigger>
           </Tabs.List>
@@ -140,7 +143,8 @@ const QualificationItem: Component<{
         {props.subtitle}
       </span>
       <div class="qualification__calendar text-sm">
-        <i class="uil uil-calendar-alt">{props.date}</i>
+        <UilCalendarAlt />
+        {props.date}
       </div>
     </div>
   );

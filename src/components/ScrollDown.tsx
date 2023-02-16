@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import { UilArrowDown } from "./Icons/UilArrowDown";
 
 export const ScrollDown: Component<{}> = (props) => {
   return (
@@ -6,7 +7,7 @@ export const ScrollDown: Component<{}> = (props) => {
       <a href="#about" class="home_scroll-button inline-flex items-center">
         <ScrollIcon />
         <span class="mr-1 ml-[2px] font-medium text-title">Scroll Down</span>
-        <i class="uil uil-arrow-down text-xl text-title" />
+        <UilArrowDown class="text-xl text-title" />
       </a>
     </div>
   );

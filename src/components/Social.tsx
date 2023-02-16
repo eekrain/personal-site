@@ -1,4 +1,7 @@
 import { Component } from "solid-js";
+import { UilGithub } from "./Icons/UilGithub";
+import { UilInstagram } from "./Icons/UilInstagram";
+import { UilLinkedIn } from "./Icons/UilLinkedIn";
 
 export const Social: Component<{}> = (props) => {
   return (
@@ -8,21 +11,21 @@ export const Social: Component<{}> = (props) => {
         target="_blank"
         class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
       >
-        <i class="uil uil-linkedin" />
+        <UilLinkedIn />
       </a>
       <a
         href="https://github.com/eekrain"
         target="_blank"
         class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
       >
-        <i class="uil uil-github" />
+        <UilGithub />
       </a>
       <a
         href="https://www.instagram.com/eekrain"
         target="_blank"
         class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
       >
-        <i class="uil uil-instagram" />
+        <UilInstagram />
       </a>
     </div>
   );
