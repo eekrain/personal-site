@@ -13,13 +13,13 @@ export const ScrollUp: Component<{}> = (props) => {
   return (
     <a
       href="#"
-      class="scrollup fixed right-10 z-50 rounded-lg bg-title py-1 px-2 opacity-80 transition-all duration-300 hover:bg-black"
+      class="scrollup fixed right-4 z-10 rounded-lg bg-title py-1 px-2 opacity-80 transition-all duration-300 hover:bg-black sm:right-6 xl:right-10"
       classList={{
-        "bottom-12": showScrollUp(),
+        "bottom-16 lg:bottom-12": showScrollUp(),
         "-bottom-1/4": !showScrollUp(),
       }}
     >
-      <i class="uil uil-arrow-up scrollup__icon text-2xl text-white"></i>
+      <i class="uil uil-arrow-up scrollup__icon text-xl text-white xl:text-2xl"></i>
     </a>
   );
 };
