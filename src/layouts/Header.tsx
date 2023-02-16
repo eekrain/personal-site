@@ -21,7 +21,7 @@ export const Header: Component<{}> = (props) => {
 
   return (
     <header class="fixed bottom-0 left-0 z-50 h-16 w-full bg-white lg:top-0">
-      <nav class="mx-6 flex h-16 items-center justify-between rounded-t-2xl bg-body lg:container lg:mx-auto  lg:max-w-lg968 lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0 ">
+      <nav class="mx-6 flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:max-w-lg968  lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0 ">
         <a href="#" class="font-medium text-title ">
           Eka
         </a>
