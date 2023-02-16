@@ -6,8 +6,6 @@ import { Skills } from "../layouts/Skills";
 import { Qualification } from "../layouts/Qualification";
 import { Contact } from "../layouts/Contact";
 import { Picture } from "astro-imagetools/components";
-
-export const prerender = true;
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,16 +14,22 @@ export const prerender = true;
   >
     <Home client:visible>
       <Picture
-        slot="main-photo"
         src="/img/profile.jpg"
-        alt="A random image"
-        breakpoints={[200, 400, 800]}
+        alt="Main profile image"
         blur={true}
         layout="fill"
         quality={100}
       />
     </Home>
-    <About client:visible />
+    <About client:visible>
+      <Picture
+        src="/img/profile.jpg"
+        alt="Main profile image"
+        blur={true}
+        layout="fill"
+        quality={100}
+      />
+    </About>
     <Skills client:visible />
     <Qualification client:visible />
     <Contact client:visible />

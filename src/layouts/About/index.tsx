@@ -1,13 +1,10 @@
-import {
-  createViewportObserver,
-  createVisibilityObserver,
-} from "@solid-primitives/intersection-observer";
-import { Component, createEffect } from "solid-js";
+import { Component, createEffect, JSX } from "solid-js";
+import { createVisibilityObserver } from "@solid-primitives/intersection-observer";
 import { Button } from "../../components/Button";
 import { setActivePage } from "../../utils/activePage";
 import { Info } from "./Info";
 
-export const About: Component<{}> = (props) => {
+export const About: Component<{ children?: JSX.Element }> = (props) => {
   let section: HTMLElement | undefined;
 
   const visible = createVisibilityObserver({ threshold: 0.6 })(() => section);
@@ -24,11 +21,9 @@ export const About: Component<{}> = (props) => {
         My introduction
       </span>
       <div class="about__container container mx-auto grid grid-cols-1 items-center gap-y-10 xl:grid-cols-2 xl:gap-x-16">
-        <img
-          src="/img/about.jpg"
-          alt="About image"
-          class="about__img w-[225px] justify-self-center rounded-3xl xl:w-[350px]"
-        />
+        <div class="h-[250px] max-w-[200px] justify-self-center overflow-clip rounded-3xl xl:h-full xl:max-w-[350px] ">
+          {props.children}
+        </div>
         <div class="about__data text-center xl:text-start">
           <Info />
           <p class="about__description lg mb-8 p-0 md:px-10 lg:p-0 lg:py-0 xl:pr-16">
