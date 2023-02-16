@@ -1,26 +1,24 @@
 import { Button } from "@kobalte/core";
-import { createBreakpoints } from "@solid-primitives/media";
-import {
-  Component,
-  createSignal,
-  ParentComponent,
-  createEffect,
-} from "solid-js";
-import { MY_BREAKPOINTS } from "../constants/myBreakpoints";
+import { createScrollPosition } from "@solid-primitives/scroll";
+import { Component, createSignal, ParentComponent, createMemo } from "solid-js";
 import { activePage, PageIds } from "../utils/activePage";
 
 const [toggleMenu, setToggleMenu] = createSignal(false);
 
 export const Header: Component<{}> = (props) => {
-  createEffect(() => {
-    console.log(
-      "🚀 ~ file: Header.tsx:19 ~ createEffect ~ activePage",
-      activePage()
-    );
+  const scroll = createScrollPosition();
+  const scrollY = () => scroll.y;
+
+  const showShadowMenu = createMemo(() => {
+    if (scrollY() > 80) return true;
+    else return false;
   });
 
   return (
-    <header class="fixed bottom-0 left-0 z-50 h-16 w-full bg-white lg:top-0">
+    <header
+      class="fixed bottom-0 left-0 z-50 h-16 w-full bg-white transition-all duration-300 lg:top-0"
+      classList={{ "shadow-menu": showShadowMenu() }}
+    >
       <nav class="mx-6 flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:max-w-lg968  lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0 ">
         <a href="#" class="font-medium text-title ">
           Eka
