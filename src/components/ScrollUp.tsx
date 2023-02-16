@@ -2,11 +2,14 @@ import { createScrollPosition } from "@solid-primitives/scroll";
 import { Component, createMemo } from "solid-js";
 
 export const ScrollUp: Component<{}> = (props) => {
-  const scroll = createScrollPosition();
+  const scroll = createScrollPosition(() =>
+    typeof window === undefined ? undefined : window
+  );
   const scrollY = () => scroll.y;
 
   const showScrollUp = createMemo(() => {
-    if (scrollY() > 460) return true;
+    const y = scrollY();
+    if (y && y > 460) return true;
     else return false;
   });
 

@@ -6,11 +6,14 @@ import { activePage, PageIds } from "../utils/activePage";
 const [toggleMenu, setToggleMenu] = createSignal(false);
 
 export const Header: Component<{}> = (props) => {
-  const scroll = createScrollPosition();
+  const scroll = createScrollPosition(() =>
+    typeof window === undefined ? undefined : window
+  );
   const scrollY = () => scroll.y;
 
   const showShadowMenu = createMemo(() => {
-    if (scrollY() > 80) return true;
+    const y = scrollY();
+    if (y && y > 80) return true;
     else return false;
   });
 
