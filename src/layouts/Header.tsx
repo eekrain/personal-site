@@ -89,8 +89,6 @@ export const Header: Component<{}> = (props) => {
     </header>
   );
 };
-console.log("🚀 ~ file: Header.tsx:75 ~ activePage()", activePage());
-console.log("🚀 ~ file: Header.tsx:75 ~ activePage()", activePage());
 
 export const NavItem: ParentComponent<{
   Icon: Component<IconProps>;
