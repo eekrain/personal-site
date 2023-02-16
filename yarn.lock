@@ -684,6 +684,13 @@
   dependencies:
     "@solid-primitives/utils" "^4.0.1"
 
+"@solid-primitives/event-listener@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/event-listener/-/event-listener-2.2.6.tgz#d5a3ff4fc63bff46586cd1f1ca4ab7798f656d77"
+  integrity sha512-Lb2q888Apv8wqgZ3WvPlt8ic2rEmHx6QT8d3pgi+JRSIRNwAysE6PZDmbwT6/hzzP1TIQG0IRZwh5tomfuqlaQ==
+  dependencies:
+    "@solid-primitives/utils" "^5.0.0"
+
 "@solid-primitives/immutable@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@solid-primitives/immutable/-/immutable-0.1.4.tgz#8876331fc31be3e7250700174d714cc9ee59bd95"
@@ -739,10 +746,26 @@
   dependencies:
     "@solid-primitives/utils" "^4.0.1"
 
+"@solid-primitives/rootless@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/rootless/-/rootless-1.2.3.tgz#ed3315e8b2698afe60668e9350b14cf9e9913ae9"
+  integrity sha512-g6sKTQt8onmyWAh92q/+7ZwAZwVQx5qCDBEo7c0+yWZbFK81t6jWCPIYDWXpI1QJ/xxLg41iuN6Eb3fJL5IDHA==
+  dependencies:
+    "@solid-primitives/utils" "^5.0.0"
+
 "@solid-primitives/script-loader@^1.1.2":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@solid-primitives/script-loader/-/script-loader-1.1.3.tgz#9e5c51eccb3b036aa7674a2b0ff9799a87e4157c"
   integrity sha512-ROr6vjYSGZtJ+qrTRumn+a4GwfWQFEq8S7UphRc3bV3z7JcinEL49mEus7XBuBnswGebx5ofANdp91Iv+GtssA==
+
+"@solid-primitives/scroll@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@solid-primitives/scroll/-/scroll-2.0.8.tgz#39466790e3ccf97ad385cd898c379b7c0ac8d58b"
+  integrity sha512-nfsmUDzmIUQZQUtlGNqkd9hjxdo3u/qQ/6h3IdcTgOD3TzAZYEGylVkFp6RiLHd2AgvwV37I4EP4W0Hes8UAFQ==
+  dependencies:
+    "@solid-primitives/event-listener" "^2.2.6"
+    "@solid-primitives/rootless" "^1.2.3"
+    "@solid-primitives/utils" "^5.0.0"
 
 "@solid-primitives/utils@^4.0.0":
   version "4.0.0"
