@@ -9,9 +9,11 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 import vercel from "@astrojs/vercel/serverless";
 
+import { astroImageTools } from "astro-imagetools";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs(), tailwind()],
+  integrations: [solidJs(), tailwind(), astroImageTools],
   output: "server",
   adapter: vercel(),
 });

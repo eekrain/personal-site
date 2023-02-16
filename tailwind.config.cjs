@@ -22,9 +22,9 @@ module.exports = {
       },
       boxShadow: {
         menu: "0 -1px 4px rgb(0 0 0 / 0.15)",
-        innerProfileXL: "inset 0 0 0 9px rgb(255 255 255 / 30%)",
-        innerProfileLG: "inset 0 0 0 8px rgb(255 255 255 / 30%)",
-        innerProfileMD: "inset 0 0 0 6px rgb(255 255 255 / 30%)",
+        innerProfileXL: "inset 0 0 0 9px rgb(255 255 255 / 60%)",
+        innerProfileLG: "inset 0 0 0 8px rgb(255 255 255 / 60%)",
+        innerProfileMD: "inset 0 0 0 6px rgb(255 255 255 / 60%)",
       },
       maxWidth: {
         lg968: "968px",
@@ -62,17 +62,6 @@ module.exports = {
   plugins: [
     plugin(function ({ addComponents }) {
       addComponents({
-        ".home__img": {
-          background: "url('/img/profile.jpg')",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          // boxShadow: "inset 0 0 0 9px rgb(255 255 255 / 30%)",
-          // order: "1",
-          // justifySelf: "center",
-          // width: "300px",
-          // height: "300px",
-        },
         ".home__subtitle": {
           position: "relative",
           // paddingLeft: "80px",

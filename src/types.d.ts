@@ -4,3 +4,5 @@ interface IconProps extends SVGSVGElementTags {
   class?: string;
   classList?: SVGSVGElementTags["classList"];
 }
+
+declare module "astro-imagetools/components";
