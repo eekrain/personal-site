@@ -14,6 +14,6 @@ import { astroImageTools } from "astro-imagetools";
 // https://astro.build/config
 export default defineConfig({
   integrations: [solidJs(), tailwind(), astroImageTools],
-  output: "server",
-  adapter: vercel(),
+  // output: "server",
+  // adapter: vercel(),
 });
