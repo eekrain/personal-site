@@ -25,6 +25,7 @@ module.exports = {
         innerProfileXL: "inset 0 0 0 9px rgb(255 255 255 / 60%)",
         innerProfileLG: "inset 0 0 0 8px rgb(255 255 255 / 60%)",
         innerProfileMD: "inset 0 0 0 6px rgb(255 255 255 / 60%)",
+        paperPage: " 0 0 0.5cm rgb(0 0 0 / 0.5)",
       },
       maxWidth: {
         lg968: "968px",
@@ -74,6 +75,12 @@ module.exports = {
             left: 0,
             top: "1rem",
           },
+        },
+        ".print-color-adjust-exact": {
+          "-webkit-print-color-adjust":
+            "exact" /* Chrome, Safari 6 – 15.3, Edge */,
+          "color-adjust": "exact" /* Firefox 48 – 96 */,
+          "print-color-adjust": "exact" /* Firefox 97+, Safari 15.4+ */,
         },
       });
     }),

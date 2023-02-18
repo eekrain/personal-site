@@ -1,0 +1,51 @@
+---
+import { UilPrint } from "../components/Icons/UilPrint";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-body">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-[#ccc] pt-4 pb-8 print:m-0 print:bg-none print:p-0 print:shadow-none"
+  >
+    <main
+      id="print"
+      class="pt mx-auto block h-[29.7cm] w-[21cm] bg-body p-[1cm] text-gray-700 shadow-paperPage print:m-0 print:h-auto print:w-full print:bg-none print:p-0 print:shadow-none"
+    >
+      <slot />
+    </main>
+    <footer
+      class="mt-6 flex justify-center gap-x-8 text-xs font-medium print:hidden"
+    >
+      <a
+        href="https://github.com/eekrain/personal-site"
+        class="underline hover:text-black">Edit on Github</a
+      >
+      <h5>
+        Made with <a
+          href="https://astro.build/"
+          class="underline hover:text-black">Astro</a
+        >
+      </h5>
+    </footer>
+    <button
+      type="button"
+      onclick="window.print()"
+      class="fixed bottom-8 right-8 flex space-x-2 rounded-xl bg-title px-6 py-4 text-white transition-all duration-300 hover:bg-black print:hidden"
+    >
+      <span>Print Out</span>
+      <UilPrint class="text-2xl" />
+    </button>
+  </body>
+</html>
