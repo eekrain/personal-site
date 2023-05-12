@@ -68,30 +68,16 @@ export const Qualification: Component<{}> = (props) => {
 
               <QualificationItem
                 position="left"
-                title="Web Design"
-                subtitle="Spain - Institute"
-                date="2021 - Present"
+                title="Bachelor of Computer Science"
+                subtitle="Amikom University of Yogyakarta"
+                date="2017 - 2022"
               />
 
               <QualificationItem
                 position="right"
-                title="Art Director"
-                subtitle="Spain - Institute"
-                date="2021 - Present"
-              />
-
-              <QualificationItem
-                position="left"
-                title="Web Development"
-                subtitle="Spain - Institute"
-                date="2021 - Present"
-              />
-
-              <QualificationItem
-                position="right"
-                title="UX Expert"
-                subtitle="Spain - Institute"
-                date="2021 - Present"
+                title="Network Engineering"
+                subtitle="SMK N 2 Yogyakarta"
+                date="2013 - 2016"
               />
             </div>
           </Tabs.Content>
@@ -104,23 +90,16 @@ export const Qualification: Component<{}> = (props) => {
 
               <QualificationItem
                 position="left"
-                title="Product Designer"
-                subtitle="Microsoft - Spain"
-                date="2021 - Present"
+                title="Fullstack Developer"
+                subtitle="CV. Restu Semara Bumi - Purwokerto"
+                date="2022 - 2023"
               />
 
               <QualificationItem
                 position="right"
-                title="UX Designer"
-                subtitle="Apple Inc - Spain"
-                date="2021 - Present"
-              />
-
-              <QualificationItem
-                position="left"
-                title="Web Designer"
-                subtitle="Figma - Spain"
-                date="2021 - Present"
+                title="Fullstack Developer"
+                subtitle="PT. Wahana Bumilangit Teknologi - Purwokerto"
+                date="2020-2021"
               />
             </div>
           </Tabs.Content>
