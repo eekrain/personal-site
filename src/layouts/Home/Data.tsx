@@ -16,7 +16,7 @@ export const Data: Component<{}> = (props) => {
         dedicated to my work.
       </p>
       <Button href="#contact" icon={SendIcon}>
-        Say Hello
+        Say Hi
       </Button>
     </div>
   );

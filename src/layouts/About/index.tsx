@@ -31,9 +31,10 @@ export const About: Component<{ children?: JSX.Element }> = (props) => {
             that my client has. I have 2 years of experience and many client are
             happy with the projects carried out.
           </p>
+          <a href=""></a>
 
-          <Button download="" href="/files/Eka-CV.pdf" icon={FileIcon}>
-            Download CV
+          <Button href="/resume" target="_blank" icon={FileIcon}>
+            Check CV
           </Button>
         </div>
       </div>

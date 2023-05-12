@@ -3,16 +3,20 @@ import { JSX, ParentComponent, Switch, Match, Show } from "solid-js";
 import { classList } from "solid-js/web";
 import { LoadingIcon } from "./LoadingIcon";
 
-export const Button: ParentComponent<{
+interface Button
+  extends Pick<
+    JSX.AnchorHTMLAttributes<HTMLAnchorElement>,
+    "class" | "href" | "download" | "target"
+  > {
   isLoading?: () => boolean;
-  class?: string;
   type?: "reset" | "button" | "submit" | undefined;
   onPress?: PressEvents["onPress"];
   href?: string;
   iconName?: string;
   icon?: JSX.Element;
-  download?: string;
-}> = (props) => {
+}
+
+export const Button: ParentComponent<Button> = (props) => {
   const Internal = () => (
     <>
       <span classList={{ "mr-2": props.icon || props.iconName ? true : false }}>
@@ -74,6 +78,7 @@ export const Button: ParentComponent<{
       }
     >
       <a
+        target={props.target}
         download={props.download}
         href={props.href}
         class=" rounded-2xl bg-title py-5 px-8 font-medium text-white transition-all duration-300 hover:bg-black"
