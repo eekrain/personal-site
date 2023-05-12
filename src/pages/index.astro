@@ -8,7 +8,12 @@ import { Contact } from "../layouts/Contact";
 import { Picture } from "astro-imagetools/components";
 ---
 
-<HomeLayout title="Welcome to Astro.">
+<HomeLayout
+  SEO={{
+    title: "🏠 Home | Ardian Eka Candra",
+    description: "CV or Resume of Ardian Eka Candra.",
+  }}
+>
   <main
     class="mx-6 lg:container lg:mx-0 lg:max-w-lg968 lg:px-4 xl:mx-auto xl:px-0"
   >

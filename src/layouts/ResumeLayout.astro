@@ -1,20 +1,41 @@
 ---
 import { UilPrint } from "../components/Icons/UilPrint";
+import { SEO as AstroSEO, Props as AstroSEOProps } from "astro-seo";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
 
-const { title } = Astro.props;
+export interface Props {
+  SEO: AstroSEOProps;
+}
+const { SEO } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth bg-body">
   <head>
+    <AstroSEO {...SEO} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body
     class="bg-[#ccc] pt-4 pb-8 print:m-0 print:bg-none print:p-0 print:shadow-none"

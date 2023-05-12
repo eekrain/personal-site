@@ -25,6 +25,7 @@
     "@solid-primitives/scroll": "^2.0.8",
     "astro": "^2.0.9",
     "astro-imagetools": "0.7.6",
+    "astro-seo": "^0.7.2",
     "solid-hcaptcha": "^0.2.6",
     "solid-js": "^1.4.3",
     "solid-toast": "^0.4.0",
