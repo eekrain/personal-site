@@ -28,7 +28,7 @@ export const About: Component<{ children?: JSX.Element }> = (props) => {
           <Info />
           <p class="about__description lg mb-8 p-0 md:px-10 lg:p-0 lg:py-0 xl:pr-16">
             Full-Stack Developer, I build information system based on problems
-            that my client has. I have years of experience and many client are
+            that my client has. I have 2 years of experience and many client are
             happy with the projects carried out.
           </p>
 

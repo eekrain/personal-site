@@ -5,31 +5,29 @@ import { UilLinkedIn } from "../../components/Icons/UilLinkedIn";
 
 export const Footer: Component<{}> = (props) => {
   return (
-    <footer class="footer mt-24 border-t border-gray-100 bg-white">
-      <div class="footer__container container mx-auto pt-8 pb-24">
-        <h1 class="footer__title mb-8 text-center text-4xl font-semibold text-title">
-          Eka
-        </h1>
+    <footer class="mt-24 border-t border-gray-100 bg-white">
+      <div class="container mx-auto pt-8 pb-12">
+        <h1 class="mb-8 text-center text-4xl font-semibold text-title">Eka</h1>
 
-        <ul class="footer__list mb-8 flex justify-center gap-x-6">
+        <ul class="mb-8 flex justify-center gap-x-6">
           <li>
             <a href="#" class="footer__link text-title hover:text-black">
               About
             </a>
           </li>
           <li>
-            <a href="#" class="footer__link text-title hover:text-black">
+            <a href="#" class="text-title hover:text-black">
               Projects
             </a>
           </li>
           <li>
-            <a href="#" class="footer__link text-title hover:text-black">
+            <a href="#" class="text-title hover:text-black">
               Testimonials
             </a>
           </li>
         </ul>
 
-        <div class="footer__social flex justify-center gap-x-6">
+        <div class="flex justify-center gap-x-6">
           <a
             href="https://www.linkedin.com/"
             target="_blank"
@@ -53,8 +51,19 @@ export const Footer: Component<{}> = (props) => {
           </a>
         </div>
 
-        <span class="footer__copy mt-16 block text-center text-sm tracking-wide text-title">
+        <span class="mt-16 block text-center text-sm tracking-wide text-title">
           &#169; Eka. All rights reserved.
+        </span>
+        <span class="mt-2 block text-center text-sm tracking-wide text-title">
+          Built with{" "}
+          <a href="https://astro.build/" class="underline hover:text-black">
+            Astro
+          </a>
+          . Deployed on{" "}
+          <a href="https://vercel.com/" class="underline hover:text-black">
+            Vercel
+          </a>
+          .
         </span>
       </div>
     </footer>
