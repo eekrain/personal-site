@@ -38,7 +38,7 @@ const { SEO } = Astro.props;
     <meta name="generator" content={Astro.generator} />
   </head>
   <body
-    class="bg-[#ccc] pt-4 pb-8 print:m-0 print:bg-none print:p-0 print:shadow-none"
+    class="w-[21cm] bg-[#ccc] pt-4 pb-8 print:m-0 print:bg-none print:p-0 print:shadow-none"
   >
     <main
       id="print"
@@ -47,7 +47,7 @@ const { SEO } = Astro.props;
       <slot />
     </main>
     <footer
-      class="mt-6 flex justify-center gap-x-8 text-xs font-medium print:hidden"
+      class="mt-6 flex w-full justify-center gap-x-8 text-xs font-medium print:hidden"
     >
       <a
         href="https://github.com/eekrain/personal-site"
