@@ -1,12 +1,11 @@
+import { type Component, Show, createEffect } from "solid-js";
 import {
-  Component,
-  createEffect,
-  onCleanup,
-  onMount,
-  Show,
-  Signal,
-} from "solid-js";
-import { createForm } from "@felte/solid";
+  createForm,
+  zodForm,
+  type FieldStore,
+  setValue,
+} from "@modular-forms/solid";
+
 import { SendIcon } from "../../components/SendIcon";
 import { Button } from "../../components/Button";
 import { z } from "zod";
@@ -17,154 +16,141 @@ import "tippy.js/dist/tippy.css";
 import "./customTippy.css";
 import toast from "solid-toast";
 
-const schema = z.object({
+const contactSchema = z.object({
   email: z.string().email("Email is invalid!"),
   name: z.string().min(3, "Name at least have 3 character"),
   message: z.string().min(3, "Message at least have 3 character"),
   captchaToken: z.string().min(3),
 });
-export type ContactSchema = z.infer<typeof schema>; // string
+export type ContactSchema = z.infer<typeof contactSchema>; // string
 
 export const ContactForm: Component<{}> = () => {
-  const { form, isSubmitting, errors, setData } = createForm<ContactSchema>({
-    extend: [
-      validator({ schema }),
-      reporter({
-        tippyProps: {
-          theme: "error",
-        },
-      }),
-    ],
-    onSubmit: async (values) => {
-      const settings = {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      };
-
-      try {
-        const fetchResponse = await fetch(`/sendEmail`, settings);
-        const json = (await fetchResponse.json()) as { message: string } | null;
-        console.log("🚀 ~ file: ContactForm.tsx:51 ~ onSubmit: ~ json", json);
-        if (fetchResponse.status === 200)
-          toast.success(json?.message || "Message succesfully sent!", {
-            duration: 5000,
-            position: "bottom-center",
-          });
-        else
-          toast.error(json?.message || "Error while trying to send message!", {
-            duration: 5000,
-            position: "bottom-center",
-          });
-      } catch (error) {
-        console.log("🚀 ~ file: ContactForm.tsx:42 ~ onSubmit: ~ error", error);
-        toast.error("Error while trying to send message!", {
-          duration: 5000,
-          position: "bottom-center",
-        });
-      }
-    },
+  const [contactForm, { Form, Field }] = createForm<ContactSchema>({
+    validate: zodForm(contactSchema),
   });
 
   return (
-    <form ref={form} class="contact__form mx-auto max-w-[360px] lg:m-0">
-      <TextInput
-        errors={errors}
-        label="Email"
-        name="email"
-        placeholder="Insert your email, eg: tes@mail.com"
-      />
-      <TextInput
-        errors={errors}
-        label="Name"
-        name="name"
-        placeholder="Insert your name"
-      />
-      <TextInput
-        errors={errors}
-        label="Message"
-        type="textarea"
-        name="message"
-        placeholder="Write me your message here"
-        includeProps={{ cols: 30, rows: 10 }}
-      />
+    <Form
+      onSubmit={(val) => {
+        console.log("🚀 ~ file: ContactForm.tsx:29 ~ val:", val);
+      }}
+    >
+      <Field name="email">
+        {(field, props) => (
+          <TextInput
+            field={field}
+            includeProps={props}
+            label="Email"
+            placeholder="Insert your email, eg: tes@mail.com"
+          />
+        )}
+      </Field>
 
-      <HCaptcha
-        sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY}
-        onVerify={(token) => {
-          setData("captchaToken", token);
-        }}
-      />
-      <Show when={Array.isArray(errors()?.captchaToken)}>
-        <span class="text-sm text-red-400">Captcha must be valid!</span>
-      </Show>
+      <Field name="name">
+        {(field, props) => (
+          <TextInput
+            field={field}
+            includeProps={props}
+            label="Name"
+            placeholder="Insert your name"
+          />
+        )}
+      </Field>
+
+      <Field name="message">
+        {(field, props) => (
+          <TextInput
+            field={field}
+            includeProps={{ ...props, cols: 30, rows: 10 }}
+            label="Message"
+            type="textarea"
+            placeholder="Write me your message here"
+          />
+        )}
+      </Field>
+
+      <Field name="captchaToken">
+        {(field, props) => (
+          <>
+            <HCaptcha
+              sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY}
+              onVerify={(token) => {
+                setValue(contactForm, field.name, token);
+              }}
+            />
+            <Show when={Boolean(field.error)}>
+              <span class="text-sm text-red-400">Captcha must be valid!</span>
+            </Show>
+          </>
+        )}
+      </Field>
 
       <Button
-        isLoading={isSubmitting}
+        isLoading={() => contactForm.submitting}
         icon={SendIcon}
         type="submit"
         class="mt-6"
       >
         Send Message
       </Button>
-    </form>
+    </Form>
   );
 };
 
 const TextInput: Component<{
-  errors: () => any;
   label: string;
-  name: string;
-  type?: string;
+  type?: "textarea" | "text";
   placeholder?: string;
+  field: FieldStore<any, any>;
   includeProps?: { [key: string]: any };
 }> = (props) => {
+  if (!props.type) props.type = "text";
+
   return (
-    <div
-      class="contact__form-div relative mb-8"
-      classList={{
-        "h-16": props.type !== "textarea",
-        "h-44": props.type === "textarea",
-      }}
-    >
-      <label
-        for={props.name}
-        class="contact__form-tag absolute -top-3 left-5 z-20 bg-body p-1 text-sm"
+    <>
+      <div
+        class="relative mb-8 w-full"
+        classList={{
+          "h-16": props.type !== "textarea",
+          "h-44": props.type === "textarea",
+        }}
       >
-        {props.label}
-      </label>
-      <Show
-        when={props.type === "textarea"}
-        fallback={
-          <input
-            id={props.name}
-            type={props.type}
-            name={props.name}
-            class="contact__form-input absolute top-0 left-0 z-10 h-full w-full rounded-xl border-2 border-red-400  bg-transparent p-6 text-normalTextColor outline-none"
+        <label
+          for={props.field.name}
+          class="absolute -top-3 left-5 z-20 bg-body p-1 text-sm"
+        >
+          {props.label}
+        </label>
+        <Show
+          when={props.type === "textarea"}
+          fallback={
+            <input
+              {...props.includeProps}
+              id={props.field.name}
+              name={props.field.name}
+              type={props.type}
+              class="absolute top-0 left-0 z-10 h-full w-full rounded-xl border-2 border-red-400  bg-transparent p-6 text-normalTextColor outline-none"
+              classList={{
+                "border-gray-300": !Boolean(props.field.error),
+                "border-red-400": Boolean(props.field.error),
+              }}
+              placeholder={props.placeholder}
+            />
+          }
+        >
+          <textarea
+            {...props.includeProps}
+            id={props.field.name}
+            name={props.field.name}
+            class="top-0 left-0 z-10 h-44 w-full resize-none rounded-xl border-2 bg-transparent p-6 text-normalTextColor outline-none"
             classList={{
-              "border-gray-300": props.errors()[props.name] === null,
-              "border-red-400": props.errors()[props.name] !== null,
+              "border-gray-300": !Boolean(props.field.error),
+              "border-red-400": Boolean(props.field.error),
             }}
             placeholder={props.placeholder}
-            {...props.includeProps}
           />
-        }
-      >
-        <textarea
-          id={props.name}
-          name={props.name}
-          class="contact__form-input ute top-0 left-0 z-10 h-44 w-full resize-none rounded-xl border-2 bg-transparent p-6 text-normalTextColor outline-none"
-          classList={{
-            "border-gray-300": props.errors()[props.name] === null,
-            "border-red-400": props.errors()[props.name] !== null,
-          }}
-          placeholder={props.placeholder}
-          {...props.includeProps}
-        />
-      </Show>
-    </div>
+        </Show>
+      </div>
+    </>
   );
 };

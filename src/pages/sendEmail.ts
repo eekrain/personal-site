@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { ContactSchema } from "../layouts/Contact/ContactForm";
+import { type ContactSchema } from "../layouts/Contact/ContactForm";
 import emailjs, { EmailJSResponseStatus } from "@emailjs/nodejs";
 
 export const post: APIRoute = async ({ request }) => {

@@ -1,6 +1,5 @@
-import { Button as KobalteButton, PressEvents } from "@kobalte/core";
-import { JSX, ParentComponent, Switch, Match, Show } from "solid-js";
-import { classList } from "solid-js/web";
+import { Button as KobalteButton } from "@kobalte/core";
+import { type JSX, type ParentComponent, Switch, Match, Show } from "solid-js";
 import { LoadingIcon } from "./LoadingIcon";
 
 interface Button
@@ -10,7 +9,7 @@ interface Button
   > {
   isLoading?: () => boolean;
   type?: "reset" | "button" | "submit" | undefined;
-  onPress?: PressEvents["onPress"];
+  onPress?: any;
   href?: string;
   iconName?: string;
   icon?: JSX.Element;
@@ -70,6 +69,7 @@ export const Button: ParentComponent<Button> = (props) => {
             "inline-flex items-center":
               props.icon || props.iconName ? true : false,
           }}
+          // @ts-ignore
           onPress={props.onPress}
           type={props.type}
         >

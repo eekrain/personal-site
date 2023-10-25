@@ -1,5 +1,5 @@
 import { createVisibilityObserver } from "@solid-primitives/intersection-observer";
-import { Component, createEffect, createSignal } from "solid-js";
+import { type Component, createEffect, createSignal } from "solid-js";
 import { BxlMessenger } from "../../components/Icons/BxlMessenger";
 import { BxMailSend } from "../../components/Icons/BxMailSend";
 import { BxRightArrowAlt } from "../../components/Icons/BxRightArrowAlt";
