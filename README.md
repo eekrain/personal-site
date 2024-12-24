@@ -3,7 +3,7 @@
 ![image](https://github.com/eekrain/personal-site/assets/65037854/c5246104-ee93-4208-b4b3-34e96ca92bce)
 
 <p align="center">
-⚒️ Built with <a text="bold" href="https://astro.build"><strong>Astro</strong></a>
+⚒️ Built with <a text="bold" href="https://astro.build"><strong>Astro</strong></a> and <a text="bold" href="https://docs.solidjs.com"><strong>SolidJS</strong></a>
 <br/><br/>
 </p>
 
