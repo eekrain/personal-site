@@ -7,7 +7,7 @@ import { Component } from "solid-js";
 
 const Social: Component<{}> = (props) => {
   return (
-    <div class="flex flex-col items-center gap-2 self-center justify-self-end">
+    <div class="flex flex-col items-center gap-2 self-center justify-self-end lg:justify-self-start">
       <a
         href="https://www.linkedin.com/in/eekrain/"
         target="_blank"

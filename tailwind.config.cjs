@@ -8,11 +8,18 @@ export default {
   theme: {
     container: {
       center: true,
+      padding: "2rem",
       screens: {
         lg: "968px",
       },
     },
     extend: {
+      screens: {
+        sm: "350px",
+        md: "576px",
+        lg: "768px",
+        xl: "992px",
+      },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],

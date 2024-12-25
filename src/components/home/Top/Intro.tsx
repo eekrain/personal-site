@@ -1,23 +1,22 @@
 import { Component } from "solid-js";
-import { Button } from "../ui/button";
-import { BiRegularPaperPlane } from "solid-icons/bi";
+import { Button } from "../../ui/button";
 import { FaSolidPaperPlane } from "solid-icons/fa";
 
 export const Intro: Component<{}> = (props) => {
   return (
-    <div class="col-span-2 grid gap-4 lg:col-span-1">
-      <h1 class="inline-flex justify-self-center font-jakarta text-3xl font-bold text-title md:text-4xl lg:mb-2 lg:justify-self-start">
+    <div class="col-span-2 flex flex-col items-center gap-4 lg:col-span-1">
+      <h1 class="inline-flex font-jakarta text-3xl font-bold text-title md:text-4xl lg:mb-2">
         Ardian Eka Candra <HandIcon />
       </h1>
 
-      <div class="flex items-center gap-2 justify-self-center lg:justify-self-start">
+      <div class="flex items-center gap-2">
         <hr class="hidden h-[2px] w-[40px] bg-title lg:block xl:w-[70px]" />
         <h3 class="font-jakarta text-lg font-semibold text-title">
           Full-Stack Developer
         </h3>
       </div>
 
-      <div class="max-w-[400px] justify-self-center text-base sm:max-w-[500px] md:mb-12">
+      <div class="flex max-w-[400px] flex-col items-end text-base sm:max-w-[500px] lg:items-start">
         <p>
           I'm a full-stack developer based in Yogyakarta, ID. I'm passionate and
           dedicated to my work.
@@ -28,23 +27,6 @@ export const Intro: Component<{}> = (props) => {
           <FaSolidPaperPlane class="size-7 pl-2" />
         </Button>
       </div>
-      {/* <h1 class="relative mb-3 inline-block align-middle font-jakarta text-3xl font-bold text-title md:text-4xl lg:mb-2">
-        Ardian Eka Candra <HandIcon />
-      </h1>
-      <div class="mb-5 flex items-center gap-2 lg:mb-4">
-        <hr class="h-[2px] w-[40px] bg-title xl:w-[70px]" />
-        <h3 class="font-jakarta text-lg font-semibold text-title">
-          Full-Stack Developer
-        </h3>
-      </div>
-      <p class="mb-8 max-w-[400px] text-base md:mb-12">
-        I'm a full-stack developer based in Yogyakarta, ID. I'm passionate and
-        dedicated to my work.
-      </p>
-      <Button class="rounded-2xl" size="xl" as="a" href="#contact">
-        Say Hi
-        <FaSolidPaperPlane class="size-7 pl-2" />
-      </Button> */}
     </div>
   );
 };

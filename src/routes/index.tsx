@@ -1,11 +1,13 @@
-import About from "~/components/about";
-import Home from "~/components/home";
+import HomeAbout from "~/components/home/About";
+import HomeTop from "~/components/home/Top";
+import HomeSkills from "~/components/home/Skills";
 
 export default function Page() {
   return (
     <div class="container">
-      <Home />
-      <About />
+      <HomeTop />
+      <HomeAbout />
+      <HomeSkills />
     </div>
   );
 }
