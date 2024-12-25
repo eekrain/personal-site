@@ -1,6 +1,7 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
+import Footer from "~/components/Footer";
 import Nav from "~/components/Nav";
 
 import "@fontsource/poppins/400.css";
@@ -24,6 +25,7 @@ export default function App() {
         <>
           <Nav />
           <Suspense>{props.children}</Suspense>
+          <Footer />
         </>
       )}
     >
