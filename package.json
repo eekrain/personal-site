@@ -1,40 +1,38 @@
 {
-  "name": "@example/basics",
+  "name": "example-with-tailwindcss",
   "type": "module",
-  "version": "0.0.1",
-  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
   },
   "dependencies": {
-    "@astrojs/solid-js": "^1.2.3",
-    "@astrojs/tailwind": "^3.0.1",
-    "@astrojs/vercel": "^3.1.0",
-    "@emailjs/browser": "^3.10.0",
-    "@emailjs/nodejs": "^2.1.1",
-    "@felte/reporter-tippy": "^1.1.5",
-    "@felte/solid": "^1.2.7",
-    "@felte/validator-zod": "^1.0.13",
-    "@fontsource/poppins": "^4.5.10",
-    "@kobalte/core": "^0.3.1",
-    "@solid-primitives/intersection-observer": "^2.0.6",
-    "@solid-primitives/scroll": "^2.0.8",
-    "astro": "^2.0.9",
-    "astro-imagetools": "0.7.6",
-    "astro-seo": "^0.7.2",
-    "solid-hcaptcha": "^0.2.6",
-    "solid-js": "^1.4.3",
-    "solid-toast": "^0.4.0",
-    "tailwindcss": "^3.0.24",
-    "tippy.js": "^6.3.7",
-    "zod": "^3.20.6"
+    "@fontsource/fugaz-one": "^5.1.0",
+    "@fontsource/plus-jakarta-sans": "^5.1.0",
+    "@fontsource/poppins": "^5.1.0",
+    "@kobalte/core": "^0.13.7",
+    "@solid-primitives/scroll": "^2.0.23",
+    "@solidjs/router": "^0.15.0",
+    "@solidjs/start": "^1.0.10",
+    "autoprefixer": "^10.4.19",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "postcss": "^8.4.38",
+    "solid-icons": "^1.1.0",
+    "solid-js": "^1.9.2",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "^3.4.3",
+    "tailwindcss-animate": "^1.0.7",
+    "vinxi": "^0.4.3"
+  },
+  "overrides": {
+    "vite": "5.4.10"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
-    "prettier": "^2.8.3",
-    "prettier-plugin-tailwindcss": "^0.2.2"
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9"
   }
 }
