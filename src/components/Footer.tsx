@@ -13,8 +13,8 @@ const Footer: Component<{}> = (props) => {
 
         <ul class="mb-8 flex justify-center gap-x-6">
           <li>
-            <a href="#" class="footer__link text-title hover:text-black">
-              About
+            <a href="/" class="footer__link text-title hover:text-black">
+              Home
             </a>
           </li>
           <li>
@@ -24,7 +24,7 @@ const Footer: Component<{}> = (props) => {
           </li>
           <li>
             <a href="#" class="text-title hover:text-black">
-              Testimonials
+              Blogs
             </a>
           </li>
         </ul>
@@ -54,16 +54,12 @@ const Footer: Component<{}> = (props) => {
         </div>
 
         <span class="mt-16 block text-center text-sm tracking-wide text-title">
-          &#169; Eka. All rights reserved.
-        </span>
-        <span class="mt-2 block text-center text-sm tracking-wide text-title">
-          Built with{" "}
-          <a href="https://astro.build/" class="underline hover:text-black">
-            Astro
-          </a>
-          . Deployed on{" "}
-          <a href="https://vercel.com/" class="underline hover:text-black">
-            Vercel
+          &#169; Eka. Built with{" "}
+          <a
+            href="https://docs.solidjs.com/solid-start"
+            class="underline hover:text-black"
+          >
+            Solid Start
           </a>
           .
         </span>

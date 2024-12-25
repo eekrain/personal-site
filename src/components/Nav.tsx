@@ -17,7 +17,7 @@ const Nav: Component<{}> = (props) => {
       )}
     >
       <nav class="container mx-6 flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0">
-        <a href="/" class="font-brand text-2xl text-title">
+        <a href="/" class="font-brand text-4xl text-title">
           Eka.
         </a>
 
