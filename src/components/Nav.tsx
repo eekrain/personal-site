@@ -17,13 +17,13 @@ const Nav: Component<{}> = (props) => {
       )}
     >
       <nav class="container mx-6 flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0">
-        <a href="/" class="font-brand text-title text-2xl">
+        <a href="/" class="font-brand text-2xl text-title">
           Eka.
         </a>
 
         <div
           class={cn(
-            "shadow-menu fixed left-0 z-50 w-full rounded-t-2xl bg-background px-6 pb-16 pt-8 transition-all duration-300 lg:transition-none",
+            "fixed left-0 z-50 w-full rounded-t-2xl bg-background px-6 pb-16 pt-8 shadow-menu transition-all duration-300 lg:transition-none",
             "-bottom-full lg:static lg:z-0 lg:w-auto lg:rounded-none lg:bg-white lg:p-0 lg:shadow-none",
             toggleMenu() && "bottom-0",
           )}
@@ -58,7 +58,7 @@ export const NavItem: ParentComponent<{
   return (
     <li class="flex flex-col items-center text-sm font-medium text-gray-600">
       <a
-        href={`#${props.href}`}
+        href={props.href}
         class={cn(
           "flex flex-col items-center transition-all duration-300 lg:hover:text-black",
           activePage() && "text-black",
