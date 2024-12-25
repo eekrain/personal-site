@@ -5,7 +5,7 @@ import { FaSolidPaperPlane } from "solid-icons/fa";
 
 export const Intro: Component<{}> = (props) => {
   return (
-    <div class="home__data col-span-2 lg:col-span-1">
+    <div class="col-span-2 lg:col-span-1">
       <h1 class="text-title relative mb-3 inline-block align-middle font-jakarta text-3xl font-bold md:text-4xl lg:mb-2">
         Ardian Eka Candra <HandIcon />
       </h1>
@@ -21,7 +21,7 @@ export const Intro: Component<{}> = (props) => {
       </p>
       <Button class="rounded-2xl" size="xl" as="a" href="#contact">
         Say Hi
-        <FaSolidPaperPlane class="size-8 pl-2" />
+        <FaSolidPaperPlane class="size-7 pl-2" />
       </Button>
     </div>
   );

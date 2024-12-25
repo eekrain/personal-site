@@ -3,8 +3,8 @@ import { FiArrowDown } from "solid-icons/fi";
 
 export const ScrollDown: Component<{}> = (props) => {
   return (
-    <div class="home_scroll hidden lg:ml-24 lg:block xl:ml-28">
-      <a href="#about" class="home_scroll-button inline-flex items-center">
+    <div class="hidden lg:ml-24 lg:block xl:ml-28">
+      <a href="#about" class="inline-flex items-center">
         <ScrollIcon />
         <span class="text-title ml-[2px] mr-1 font-medium">Scroll Down</span>
         <FiArrowDown class="text-title text-xl" />
@@ -17,7 +17,6 @@ const ScrollIcon = () => (
   <svg
     width="32px"
     height="32px"
-    class="home__scroll-mouse"
     viewBox="0 0 247 390"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
