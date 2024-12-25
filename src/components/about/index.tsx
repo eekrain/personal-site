@@ -6,7 +6,7 @@ import { RiDocumentFileList3Line } from "solid-icons/ri";
 
 const About: Component<{}> = (props) => {
   return (
-    <section id="about" class="section scroll-mt-20">
+    <section id="about" class="section h-screen scroll-mt-36">
       <div class="relative mt-24 lg:-top-16 lg:mt-0" />
       <h2 class="text-center text-4xl text-title">About Me</h2>
       <span class="mb-12 block text-center lg:mb-16">My introduction</span>
