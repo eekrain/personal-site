@@ -7,29 +7,33 @@ import { Component } from "solid-js";
 
 const Social: Component<{}> = (props) => {
   return (
-    <div class="flex flex-col items-center gap-2 self-center justify-self-end lg:justify-self-start">
+    <div class="relative flex flex-col items-center gap-14 self-center justify-self-end text-title">
+      <div class="absolute left-0 top-0 flex h-full w-full justify-center">
+        <hr class="h-full w-[1px] bg-title" />
+      </div>
+
       <a
         href="https://www.linkedin.com/in/eekrain/"
         target="_blank"
-        class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
+        class="z-10 flex size-7 items-center justify-center bg-body"
       >
-        <FaBrandsLinkedin />
+        <FaBrandsLinkedin class="size-5 transition-all duration-200 hover:size-6" />
       </a>
-      <hr class="h-10 w-[1px] bg-title" />
+
       <a
         href="https://github.com/eekrain"
         target="_blank"
-        class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
+        class="z-10 flex size-7 items-center justify-center bg-body"
       >
-        <FaBrandsGithub />
+        <FaBrandsGithub class="size-5 transition-all duration-200 hover:size-6" />
       </a>
-      <hr class="h-10 w-[1px] bg-title" />
+
       <a
         href="https://www.instagram.com/eekrain"
         target="_blank"
-        class="home-social-icon text-xl text-title transition-all duration-300 hover:text-black"
+        class="z-10 flex size-7 items-center justify-center bg-body"
       >
-        <FaBrandsInstagram />
+        <FaBrandsInstagram class="size-5 transition-all duration-200 hover:size-6" />
       </a>
     </div>
   );
