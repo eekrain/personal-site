@@ -17,16 +17,17 @@ import "@fontsource/plus-jakarta-sans/700.css";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "@fontsource/fugaz-one";
 import "./app.css";
+import { MetaProvider } from "@solidjs/meta";
 
 export default function App() {
   return (
     <Router
       root={(props) => (
-        <>
+        <MetaProvider>
           <Nav />
           <Suspense>{props.children}</Suspense>
           <Footer />
-        </>
+        </MetaProvider>
       )}
     >
       <FileRoutes />

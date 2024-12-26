@@ -10,7 +10,7 @@ export const MyInput: Component<{
   includeProps?: { [key: string]: any };
 }> = (props) => {
   return (
-    <div class={cn("relative mb-8 h-8", props.type === "textarea" && "h-44")}>
+    <div class={cn("relative mb-6 h-8", props.type === "textarea" && "h-44")}>
       <label
         for={props.name}
         class="absolute -top-3 left-5 z-20 bg-body p-1 text-sm"

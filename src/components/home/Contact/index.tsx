@@ -13,7 +13,7 @@ const HomeContact: Component<{}> = (props) => {
   });
 
   return (
-    <section id="contact">
+    <section id="contact" class="min-h-[85vh] scroll-mt-28">
       <h2 class="text-center text-4xl text-title">Contact</h2>
       <span class="mb-12 block text-center lg:mb-16">Get in touch</span>
 

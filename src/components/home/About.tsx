@@ -36,7 +36,7 @@ const HomeAbout: Component<{}> = (props) => {
           </p>
 
           <Button class="rounded-2xl" size="xl" as="a" href="/resume">
-            My Resume
+            <span>My Resume</span>
             <RiDocumentFileList3Line class="size-7 pl-2" />
           </Button>
         </div>

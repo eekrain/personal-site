@@ -23,7 +23,7 @@ export const Intro: Component<{}> = (props) => {
         </p>
 
         <Button class="mt-6 w-fit rounded-2xl" size="xl" as="a" href="#contact">
-          Say Hi
+          <span>Say Hi</span>
           <FaSolidPaperPlane class="size-7 pl-2" />
         </Button>
       </div>
