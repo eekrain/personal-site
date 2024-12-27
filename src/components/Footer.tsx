@@ -18,20 +18,20 @@ const Footer: Component<{}> = (props) => {
             </a>
           </li>
           <li>
-            <a href="#" class="text-title hover:text-black">
-              Projects
+            <a href="/resume" class="text-title hover:text-black">
+              Resume
             </a>
           </li>
           <li>
-            <a href="#" class="text-title hover:text-black">
-              Blogs
+            <a href="/projects" class="text-title hover:text-black">
+              Projects
             </a>
           </li>
         </ul>
 
         <div class="flex justify-center gap-x-6">
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/eekrain"
             target="_blank"
             class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-title text-lg text-white hover:bg-black"
           >

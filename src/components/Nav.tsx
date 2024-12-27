@@ -2,7 +2,14 @@ import { useLocation } from "@solidjs/router";
 import { AiOutlineUser } from "solid-icons/ai";
 import { FiHome } from "solid-icons/fi";
 import { HiOutlineDocumentText, HiOutlinePaperAirplane } from "solid-icons/hi";
-import { Component, createSignal, JSX, ParentComponent } from "solid-js";
+import {
+  Component,
+  createEffect,
+  createSignal,
+  JSX,
+  ParentComponent,
+  Show,
+} from "solid-js";
 import { currentPage } from "~/lib/page-state";
 import { cn } from "~/lib/utils";
 
@@ -11,6 +18,10 @@ const Nav: Component<{}> = (props) => {
   // const active = (path: string) =>
   //   path == location.pathname ? "border-sky-600" : "border-transparent hover:border-sky-600";
   const [toggleMenu, setToggleMenu] = createSignal(false);
+
+  createEffect(() => {
+    console.log("🚀 ~ createEffect ~ location.pathname:", location.pathname);
+  });
 
   return (
     <header
@@ -32,18 +43,35 @@ const Nav: Component<{}> = (props) => {
           )}
         >
           <ul class="grid grid-cols-3 gap-8 lg:flex">
-            <NavItem href="#home" icon={<FiHome />}>
-              Home
-            </NavItem>
-            <NavItem href="#about" icon={<AiOutlineUser />}>
-              About
-            </NavItem>
-            <NavItem href="#skills" icon={<HiOutlineDocumentText />}>
-              Skills
-            </NavItem>
-            <NavItem href="#contact" icon={<HiOutlinePaperAirplane />}>
-              Contact
-            </NavItem>
+            <Show
+              when={location.pathname === "/"}
+              fallback={
+                <>
+                  <NavItem href="/" icon={<FiHome />}>
+                    Home
+                  </NavItem>
+                  <NavItem href="/projects" icon={<AiOutlineUser />}>
+                    Projects
+                  </NavItem>
+                </>
+              }
+            >
+              <NavItem href="#home" icon={<FiHome />}>
+                Home
+              </NavItem>
+              <NavItem href="#about" icon={<AiOutlineUser />}>
+                About
+              </NavItem>
+              <NavItem href="#skills" icon={<HiOutlineDocumentText />}>
+                Skills
+              </NavItem>
+              <NavItem href="#contact" icon={<HiOutlinePaperAirplane />}>
+                Contact
+              </NavItem>
+              <NavItem href="/projects" icon={<AiOutlineUser />}>
+                Projects
+              </NavItem>
+            </Show>
           </ul>
         </div>
       </nav>
