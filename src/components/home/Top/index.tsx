@@ -7,9 +7,7 @@ import { setCurrentPage } from "~/lib/page-state";
 
 const HomeTop: ParentComponent<{}> = (props) => {
   let section: HTMLElement | undefined;
-  const visible = createVisibilityObserver({
-    threshold: 0.1,
-  })(() => section);
+  const visible = createVisibilityObserver({ threshold: 0.8 })(() => section);
   createEffect(() => {
     if (visible()) setCurrentPage("#home");
   });
