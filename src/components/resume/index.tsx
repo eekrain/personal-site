@@ -4,21 +4,23 @@ import { WorkExperience } from "./WorkExperience";
 import { Education } from "./Education";
 import { Skills } from "./Skills";
 import { Courses } from "./Courses";
+import { Projects } from "./Projects";
 
 const ResumePage: Component<{}> = (props) => {
   return (
     <div>
       <Header />
-      <hr class="my-4 border-t-2 border-gray-600" />
+      <hr class="mb-8 mt-4 border-t-2 border-gray-600" />
 
       <div class="grid grid-cols-[35%_1fr] gap-x-8">
-        <div class="grid gap-4">
+        <div class="flex flex-col gap-4">
           <Education />
           <Courses />
           <Skills />
         </div>
-        <div>
+        <div class="flex flex-col gap-4">
           <WorkExperience />
+          <Projects />
         </div>
       </div>
     </div>

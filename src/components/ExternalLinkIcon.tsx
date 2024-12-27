@@ -16,7 +16,6 @@ const ExternalLinkIcon: Component<IconProps> = (props) => {
       height="1em"
       width="1em"
       {...props}
-      class={cn("group transition-all duration-200", props.class)}
     >
       <path
         class="transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-125"

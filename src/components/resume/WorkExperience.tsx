@@ -11,10 +11,12 @@ export const WorkExperience: Component<{}> = (props) => {
         PROFESSIONAL EXPERIENCE
       </h3>
 
-      <ul class="grid gap-2">
+      <ul class="grid gap-3">
         <li>
           <div class="flex items-center justify-between">
-            <h4 class="text-lg font-medium">Full Stack Developer</h4>
+            <h4 class="font-poppins text-lg font-medium">
+              Full Stack Developer
+            </h4>
 
             <p class="flex items-baseline space-x-2 text-xs">
               <IoCalendarOutline />
@@ -22,12 +24,19 @@ export const WorkExperience: Component<{}> = (props) => {
             </p>
           </div>
           <div class="mt-1 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <h5 class="text-sm font-semibold">Platon</h5>
-              <a target="_blank" href="https://platon.co.id/?lang=id">
-                <ExternalLinkIcon />
-              </a>
-            </div>
+            <a
+              class="group"
+              target="_blank"
+              href="https://www.udemy.com/certificate/UC-b3198aad-f9fa-4514-95af-887e0bb9aa56/"
+            >
+              <h5 class="mb-1 text-sm font-semibold">
+                <span class="group-hover:underline group-hover:underline-offset-4">
+                  Platon
+                </span>
+
+                <ExternalLinkIcon class="-mt-1 ml-2 inline-block" />
+              </h5>
+            </a>
 
             <p class="flex items-baseline space-x-2 text-xs">
               <BiRegularMap />
@@ -37,16 +46,19 @@ export const WorkExperience: Component<{}> = (props) => {
 
           <p class="mt-2 text-sm">
             I work on the Platon freelance platform as a full-stack developer. I
-            take jobs related to React.js, Next.js, React Native, and
-            Express.js. Various jobs from implementing initial designs from
-            Figma, troubleshooting of some errors, and performance improvement
-            through debugging and better state management.
+            take jobs related to <i>React.js</i>, <i>Next.js</i>,{" "}
+            <i>React Native</i>, and <i>Express.js</i> with <i>Prisma ORM</i>.
+            Various jobs from implementing initial designs from <i>Figma</i>,
+            troubleshooting of some errors, and performance improvement through
+            debugging and better state management.
           </p>
         </li>
 
         <li>
           <div class="flex items-center justify-between">
-            <h4 class="text-lg font-medium">Full Stack Developer</h4>
+            <h4 class="font-poppins text-lg font-medium">
+              Full Stack Developer
+            </h4>
 
             <p class="flex items-baseline space-x-2 text-xs">
               <IoCalendarOutline />
@@ -64,7 +76,7 @@ export const WorkExperience: Component<{}> = (props) => {
             </p>
           </div>
 
-          <ul class="mt-2 list-disc pl-4 text-sm">
+          <ul class="mt-2 list-disc text-sm">
             <li>
               Designed a CMS (<i>Content Management System</i>) with
               multi-tenant capabilities for villages in Puwokerto at scales.

@@ -19,9 +19,8 @@ export const Education: Component<{}> = (props) => {
           </h5>
 
           <div class="flex items-baseline justify-between">
-            <p class="text-sm">
-              <span class="font-semibold">GPA</span>:{" "}
-              <span class="underline">3.25</span>
+            <p class="font-semibold">
+              GPA: <span class="underline">3.25</span>
             </p>
             <p class="flex items-baseline space-x-2 text-xs">
               <IoCalendarOutline />

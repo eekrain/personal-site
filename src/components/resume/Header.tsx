@@ -12,18 +12,18 @@ export const Header: Component<{}> = (props) => {
           Ardian Eka Candra
         </h1>
         <h2 class="text-lg font-semibold tracking-widest text-title">
-          Fullstack Developer
+          Full Stack Developer
         </h2>
 
-        <p class="mt-4 text-justify text-xs">
-          Full Stack Developer with 2 years experience in developing and
-          managing modern web apps and mobile apps. Skilled in React.js,
-          Next.js, React Native, NodeJS, Express.js, SQL, and Serverless
-          environments.
+        <p class="mt-4 text-justify text-sm">
+          Full Stack Developer with 2 years experience in building modern web &
+          mobile apps using React and React Native. Im also proficient in
+          building RESTFul API using Express / Nest.js and interfacing with data
+          through SQL / NoSQL Databases.
         </p>
       </div>
 
-      <div class="flex-col space-y-1 text-xs">
+      <div class="flex-col space-y-2 text-xs">
         <p class="flex justify-end space-x-2">
           <a
             class="underline hover:text-black"
@@ -31,19 +31,19 @@ export const Header: Component<{}> = (props) => {
           >
             candra.ardianeka@gmail.com
           </a>
-          <BxMailSend />
+          <BxMailSend class="size-4" />
         </p>
 
         <p class="flex justify-end space-x-2">
           <span>Yogyakarta, Indonesia</span>
-          <BiRegularMap />
+          <BiRegularMap class="size-4" />
         </p>
 
         <p class="flex justify-end space-x-2">
           <a class="underline hover:text-black" href="https://ardianeka.my.id">
             ardianeka.my.id
           </a>
-          <AiOutlineGlobal />
+          <AiOutlineGlobal class="size-4" />
         </p>
 
         <p class="flex justify-end space-x-2">
@@ -53,7 +53,7 @@ export const Header: Component<{}> = (props) => {
           >
             linkedin.com/in/eekrain
           </a>
-          <FaBrandsLinkedin />
+          <FaBrandsLinkedin class="size-4" />
         </p>
 
         <p class="flex justify-end space-x-2">
@@ -63,7 +63,7 @@ export const Header: Component<{}> = (props) => {
           >
             github.com/eekrain
           </a>
-          <FaBrandsGithub />
+          <FaBrandsGithub class="size-4" />
         </p>
       </div>
     </header>

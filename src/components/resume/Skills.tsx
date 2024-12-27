@@ -8,23 +8,22 @@ export const Skills: Component<{}> = (props) => {
         SKILLS
       </h3>
 
-      <ul class="print-color-adjust-exact flex flex-wrap gap-2 text-white">
-        <li class="bg-title px-2">ReactJS</li>
-        <li class="bg-title px-2">React Native</li>
-        <li class="bg-title px-2">AstroJS</li>
-        <li class="bg-title px-2">SolidJS</li>
-        <li class="bg-title px-2">NextJS</li>
-        <li class="bg-title px-2">TailwindCSS</li>
-        <li class="bg-title px-2">Git</li>
-        <li class="bg-title px-2">NodeJS</li>
-        <li class="bg-title px-2">tRPC</li>
-        <li class="bg-title px-2">NestJS</li>
-        <li class="bg-title px-2">Express</li>
-        <li class="bg-title px-2">GraphQL</li>
-        <li class="bg-title px-2">RestFUL</li>
-        <li class="bg-title px-2">AWS Serverless</li>
-        <li class="bg-title px-2">Serverless Stack</li>
-        <li class="bg-title px-2">Docker</li>
+      <ul class="print-color-adjust-exact flex flex-wrap gap-2 text-sm text-white">
+        <li class="bg-title px-2 py-1">React.js</li>
+        <li class="bg-title px-2 py-1">React Native</li>
+        <li class="bg-title px-2 py-1">Next.js</li>
+        <li class="bg-title px-2 py-1">Typescript</li>
+        <li class="bg-title px-2 py-1">TailwindCSS</li>
+        <li class="bg-title px-2 py-1">Git</li>
+        <li class="bg-title px-2 py-1">Node.js</li>
+        <li class="bg-title px-2 py-1">Nest.js</li>
+        <li class="bg-title px-2 py-1">Express</li>
+        <li class="bg-title px-2 py-1">tRPC</li>
+        <li class="bg-title px-2 py-1">SQL</li>
+        <li class="bg-title px-2 py-1">Drizzle ORM</li>
+        <li class="bg-title px-2 py-1">Prisma ORM</li>
+        <li class="bg-title px-2 py-1">SST</li>
+        <li class="bg-title px-2 py-1">Docker</li>
       </ul>
     </div>
   );
