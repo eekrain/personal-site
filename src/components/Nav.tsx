@@ -3,6 +3,7 @@ import { AiOutlineUser } from "solid-icons/ai";
 import { FiHome } from "solid-icons/fi";
 import { HiOutlineDocumentText, HiOutlinePaperAirplane } from "solid-icons/hi";
 import { Component, createSignal, JSX, ParentComponent } from "solid-js";
+import { currentPage } from "~/lib/page-state";
 import { cn } from "~/lib/utils";
 
 const Nav: Component<{}> = (props) => {
@@ -56,14 +57,15 @@ export const NavItem: ParentComponent<{
   icon: JSX.Element;
   href: string;
 }> = (props) => {
-  const activePage = () => false;
+  const active = () => currentPage() === props.href;
+
   return (
     <li class="flex flex-col items-center text-sm font-medium text-gray-600">
       <a
         href={props.href}
         class={cn(
           "flex flex-col items-center transition-all duration-300 lg:hover:text-black",
-          activePage() && "text-black",
+          active() && "text-black",
         )}
       >
         <span class="lg:hidden">{props.icon}</span>

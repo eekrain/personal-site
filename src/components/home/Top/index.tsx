@@ -1,11 +1,21 @@
-import { ParentComponent } from "solid-js";
+import { createEffect, ParentComponent } from "solid-js";
 import Social from "./Social";
 import { Intro } from "./Intro";
 import { ScrollDown } from "./ScrollDown";
+import { createVisibilityObserver } from "@solid-primitives/intersection-observer";
+import { setCurrentPage } from "~/lib/page-state";
 
 const HomeTop: ParentComponent<{}> = (props) => {
+  let section: HTMLElement | undefined;
+  const visible = createVisibilityObserver({
+    threshold: 0.1,
+  })(() => section);
+  createEffect(() => {
+    if (visible()) setCurrentPage("#home");
+  });
+
   return (
-    <section id="home" class="flex h-dvh flex-col justify-center">
+    <section ref={section} id="home" class="flex h-dvh flex-col justify-center">
       <div class="-mt-20 grid lg:gap-y-8 xl:gap-y-12">
         <div class="grid grid-cols-[0.5fr_1fr] items-center gap-8 lg:grid-cols-[70px_repeat(2,_1fr)]">
           <Social />

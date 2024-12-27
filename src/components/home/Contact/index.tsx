@@ -4,6 +4,8 @@ import { ContactCard } from "./ContactCard";
 import { FaBrandsFacebookMessenger } from "solid-icons/fa";
 import { ContactForm } from "./ContactForm";
 import { BxMailSend } from "~/components/BxMailSend";
+import { createVisibilityObserver } from "@solid-primitives/intersection-observer";
+import { setCurrentPage } from "~/lib/page-state";
 
 const HomeContact: Component<{}> = (props) => {
   const [ready, setReady] = createSignal(false);
@@ -11,8 +13,14 @@ const HomeContact: Component<{}> = (props) => {
     setReady(true);
   });
 
+  let section: HTMLElement | undefined;
+  const visible = createVisibilityObserver({ threshold: 0.4 })(() => section);
+  createEffect(() => {
+    if (visible()) setCurrentPage("#contact");
+  });
+
   return (
-    <section id="contact" class="min-h-[85vh] scroll-mt-16">
+    <section ref={section} id="contact" class="min-h-[85vh] scroll-mt-16">
       <h2 class="text-center text-4xl text-title">Contact</h2>
       <span class="mb-12 block text-center lg:mb-16">Get in touch</span>
 
