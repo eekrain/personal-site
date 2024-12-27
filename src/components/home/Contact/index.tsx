@@ -1,10 +1,8 @@
 import { IconProps } from "solid-icons";
 import { Component, createEffect, createSignal, Show } from "solid-js";
-import { Card, CardContent, CardHeader } from "~/components/ui/card";
 import { ContactCard } from "./ContactCard";
 import { FaBrandsFacebookMessenger } from "solid-icons/fa";
 import { ContactForm } from "./ContactForm";
-import { publicEnv } from "~/lib/env";
 
 const HomeContact: Component<{}> = (props) => {
   const [ready, setReady] = createSignal(false);
@@ -13,7 +11,7 @@ const HomeContact: Component<{}> = (props) => {
   });
 
   return (
-    <section id="contact" class="min-h-[85vh] scroll-mt-28">
+    <section id="contact" class="min-h-[85vh] scroll-mt-16">
       <h2 class="text-center text-4xl text-title">Contact</h2>
       <span class="mb-12 block text-center lg:mb-16">Get in touch</span>
 

@@ -1,14 +1,18 @@
 import * as v from "valibot";
 
-const publicEnvSchema = v.object({
-  VITE_HCAPTCHA_SITE_KEY: v.pipe(v.string(), v.minLength(1)),
+const serverEnvSchema = v.object({
+  EMAILJS_PUBLIC_KEY: v.pipe(v.string(), v.minLength(1)),
+  EMAILJS_PRIVATE_KEY: v.pipe(v.string(), v.minLength(1)),
+  EMAILJS_SERVICE_ID: v.pipe(v.string(), v.minLength(1)),
+  EMAILJS_TEMPLATE_ID: v.pipe(v.string(), v.minLength(1)),
+  HCAPTCHA_SECRET_KEY: v.pipe(v.string(), v.minLength(1)),
 });
-type PublicEnvSchema = v.InferOutput<typeof publicEnvSchema>;
+type ServerEnvSchema = v.InferOutput<typeof serverEnvSchema>;
 
-export let publicEnv: PublicEnvSchema = {} as PublicEnvSchema;
+export let serverEnv: ServerEnvSchema = {} as ServerEnvSchema;
 
 try {
-  publicEnv = v.parse(publicEnvSchema, import.meta.env);
+  serverEnv = v.parse(serverEnvSchema, process.env);
 } catch (error) {
   console.error("Environment validation error:", error);
 }
