@@ -2,6 +2,7 @@ import { BiRegularMap } from "solid-icons/bi";
 import { FiExternalLink } from "solid-icons/fi";
 import { IoCalendarOutline } from "solid-icons/io";
 import { Component } from "solid-js";
+import ExternalLinkIcon from "../ExternalLinkIcon";
 
 export const WorkExperience: Component<{}> = (props) => {
   return (
@@ -21,10 +22,10 @@ export const WorkExperience: Component<{}> = (props) => {
             </p>
           </div>
           <div class="mt-1 flex items-center justify-between">
-            <div class="flex items-baseline gap-2">
+            <div class="flex items-center gap-2">
               <h5 class="text-sm font-semibold">Platon</h5>
-              <a href="https://platon.co.id/?lang=id">
-                <FiExternalLink />
+              <a target="_blank" href="https://platon.co.id/?lang=id">
+                <ExternalLinkIcon />
               </a>
             </div>
 
