@@ -1,3 +1,4 @@
+import { useLocation } from "@solidjs/router";
 import { AiOutlineUser } from "solid-icons/ai";
 import { FiHome } from "solid-icons/fi";
 import { HiOutlineDocumentText, HiOutlinePaperAirplane } from "solid-icons/hi";
@@ -5,7 +6,7 @@ import { Component, createSignal, JSX, ParentComponent } from "solid-js";
 import { cn } from "~/lib/utils";
 
 const Nav: Component<{}> = (props) => {
-  // const location = useLocation();
+  const location = useLocation();
   // const active = (path: string) =>
   //   path == location.pathname ? "border-sky-600" : "border-transparent hover:border-sky-600";
   const [toggleMenu, setToggleMenu] = createSignal(false);
@@ -14,6 +15,7 @@ const Nav: Component<{}> = (props) => {
     <header
       class={cn(
         "fixed bottom-0 left-0 z-50 h-16 w-full bg-white font-medium transition-all duration-300 lg:top-0",
+        location.pathname === "/resume" && "sticky",
       )}
     >
       <nav class="container mx-6 flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0">
