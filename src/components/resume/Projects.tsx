@@ -25,6 +25,7 @@ export const Projects: Component<{}> = (props) => {
             VPN service provider based on{" "}
             <a
               href="https://www.v2ray.com/en/"
+              target="_blank"
               class="underline transition-all duration-200 hover:font-medium hover:text-black"
             >
               V2Ray protocols
@@ -35,6 +36,7 @@ export const Projects: Component<{}> = (props) => {
             wallets to use our services. I used{" "}
             <a
               href="https://tripay.co.id/"
+              target="_blank"
               class="underline transition-all duration-200 hover:font-medium hover:text-black"
             >
               TriPay payment gateway
@@ -43,6 +45,7 @@ export const Projects: Component<{}> = (props) => {
             the help of{" "}
             <a
               href="https://github.com/zhaofengli/colmena"
+              target="_blank"
               class="underline transition-all duration-200 hover:font-medium hover:text-black"
             >
               Colmena tool
@@ -51,6 +54,7 @@ export const Projects: Component<{}> = (props) => {
             accessible through{" "}
             <a
               href="https://core.telegram.org/bots/webapps"
+              target="_blank"
               class="underline transition-all duration-200 hover:font-medium hover:text-black"
             >
               Telegram Mini Apps

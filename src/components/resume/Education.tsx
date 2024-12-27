@@ -8,10 +8,10 @@ export const Education: Component<{}> = (props) => {
         EDUCATION
       </h3>
 
-      <ul class="relative grid gap-3 pl-3">
-        <hr class="absolute left-0 top-2 h-[93%] w-[1px] bg-title" />
+      <ul class="print:print-color-adjust-exact relative grid gap-3 pl-3">
+        <hr class="absolute left-[4px] top-2 h-[93%] w-[1px] bg-title" />
         <li class="relative">
-          <div class="absolute -left-[15px] top-[50%] size-2 rounded-full bg-title" />
+          <div class="absolute -left-[11px] top-[50%] size-2 rounded-full bg-title" />
 
           <h4 class="mb-1 font-semibold">Bachelor of Informatics</h4>
           <h5 class="mb-2 text-sm font-medium">
@@ -29,7 +29,7 @@ export const Education: Component<{}> = (props) => {
           </div>
         </li>
         <li class="relative">
-          <div class="absolute -left-[15px] top-[50%] size-2 rounded-full bg-title" />
+          <div class="absolute -left-[11px] top-[50%] size-2 rounded-full bg-title" />
 
           <h4 class="mb-1 font-semibold">Computer & Network Engineering</h4>
           <h5 class="text-sm font-medium">SMKN 2 Yogyakarta</h5>

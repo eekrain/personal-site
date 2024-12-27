@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -146,5 +147,17 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ addComponents }) {
+      addComponents({
+        ".print-color-adjust-exact": {
+          "-webkit-print-color-adjust":
+            "exact" /* Chrome, Safari 6 – 15.3, Edge */,
+          "color-adjust": "exact" /* Firefox 48 – 96 */,
+          "print-color-adjust": "exact" /* Firefox 97+, Safari 15.4+ */,
+        },
+      });
+    }),
+  ],
 };

@@ -1,6 +1,7 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
+import { MetaProvider } from "@solidjs/meta";
 import Footer from "~/components/Footer";
 import Nav from "~/components/Nav";
 
@@ -17,7 +18,6 @@ import "@fontsource/plus-jakarta-sans/700.css";
 import "@fontsource/plus-jakarta-sans/800.css";
 import "@fontsource/fugaz-one";
 import "./app.css";
-import { MetaProvider } from "@solidjs/meta";
 
 export default function App() {
   return (

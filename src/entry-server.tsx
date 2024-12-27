@@ -28,7 +28,7 @@ export default createHandler(() => (
           <link rel="manifest" href="/site.webmanifest" />
           {assets}
         </head>
-        <body class="text-normalTextColor">
+        <body class="text-normalTextColor print:invisible">
           <div id="app">{children}</div>
           {scripts}
         </body>
