@@ -17,8 +17,6 @@ import { CgClose } from "solid-icons/cg";
 
 const Nav: Component<{}> = (props) => {
   const location = useLocation();
-  // const active = (path: string) =>
-  //   path == location.pathname ? "border-sky-600" : "border-transparent hover:border-sky-600";
   const [toggleMenu, setToggleMenu] = createSignal(false);
 
   createEffect(() => {
