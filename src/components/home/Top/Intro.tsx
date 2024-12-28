@@ -16,8 +16,8 @@ export const Intro: Component<{}> = (props) => {
         </h3>
       </div>
 
-      <div class="flex max-w-[400px] flex-col items-end text-base sm:max-w-[500px] lg:items-start">
-        <p>
+      <div class="flex flex-col items-center text-base lg:items-start">
+        <p class="block max-w-[300px] md:max-w-[400px]">
           I'm a full-stack developer based in Yogyakarta, ID. I'm passionate and
           dedicated to my work.
         </p>

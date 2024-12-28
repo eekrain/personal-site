@@ -8,10 +8,12 @@ import {
   createSignal,
   JSX,
   ParentComponent,
-  Show,
 } from "solid-js";
 import { currentPage } from "~/lib/page-state";
 import { cn } from "~/lib/utils";
+import { Button } from "./ui/button";
+import { RiSystemAppsLine } from "solid-icons/ri";
+import { CgClose } from "solid-icons/cg";
 
 const Nav: Component<{}> = (props) => {
   const location = useLocation();
@@ -26,54 +28,56 @@ const Nav: Component<{}> = (props) => {
   return (
     <header
       class={cn(
-        "fixed bottom-0 left-0 z-50 h-16 w-full bg-white font-medium transition-all duration-300 lg:top-0",
+        "fixed bottom-0 left-0 z-50 h-16 w-full bg-white font-medium shadow-[0_-3px_10px_rgb(0,0,0,0.2)] transition-all duration-300 lg:top-0 lg:shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
         location.pathname === "/resume" && "sticky",
       )}
     >
-      <nav class="container mx-6 flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0">
+      <nav class="container flex h-16 items-center justify-between rounded-t-2xl lg:container lg:mx-auto lg:gap-x-4 lg:rounded-none lg:bg-white lg:px-4 xl:px-0">
         <a href="/" class="font-brand text-2xl text-title md:text-4xl">
           Eka.
         </a>
-
         <div
           class={cn(
-            "fixed left-0 z-50 w-full rounded-t-2xl bg-background px-6 pb-16 pt-8 shadow-menu transition-all duration-300 lg:transition-none",
+            "fixed left-0 z-50 w-full rounded-t-2xl bg-background pb-16 pt-8 shadow-menu transition-all duration-300 lg:transition-none",
             "-bottom-full lg:static lg:z-0 lg:w-auto lg:rounded-none lg:bg-white lg:p-0 lg:shadow-none",
             toggleMenu() && "bottom-0",
           )}
         >
           <ul class="grid grid-cols-3 gap-8 lg:flex">
-            <Show
-              when={location.pathname === "/"}
-              fallback={
-                <>
-                  <NavItem href="/" icon={<FiHome />}>
-                    Home
-                  </NavItem>
-                  <NavItem href="/projects" icon={<AiOutlineUser />}>
-                    Projects
-                  </NavItem>
-                </>
-              }
-            >
-              <NavItem href="#home" icon={<FiHome />}>
-                Home
-              </NavItem>
-              <NavItem href="#about" icon={<AiOutlineUser />}>
-                About
-              </NavItem>
-              <NavItem href="#skills" icon={<HiOutlineDocumentText />}>
-                Skills
-              </NavItem>
-              <NavItem href="#contact" icon={<HiOutlinePaperAirplane />}>
-                Contact
-              </NavItem>
-              <NavItem href="/projects" icon={<AiOutlineUser />}>
-                Projects
-              </NavItem>
-            </Show>
+            <NavItem href="/#home" icon={<FiHome />}>
+              Home
+            </NavItem>
+            <NavItem href="/#about" icon={<AiOutlineUser />}>
+              About
+            </NavItem>
+            <NavItem href="/#skills" icon={<HiOutlineDocumentText />}>
+              Skills
+            </NavItem>
+            <NavItem href="/#contact" icon={<HiOutlinePaperAirplane />}>
+              Contact
+            </NavItem>
+            <NavItem href="/projects" icon={<AiOutlineUser />}>
+              Projects
+            </NavItem>
           </ul>
+
+          <Button
+            class="absolute bottom-2 right-4 cursor-pointer text-2xl lg:hidden"
+            variant="outline"
+            size="icon"
+            onClick={() => setToggleMenu((prev) => false)}
+          >
+            <CgClose class="text-title transition-all duration-300 hover:text-black" />
+          </Button>
         </div>
+        <Button
+          class="lg:hidden"
+          variant="outline"
+          size="icon"
+          onClick={() => setToggleMenu((prev) => true)}
+        >
+          <RiSystemAppsLine class="text-title transition-all duration-300 hover:text-black" />
+        </Button>
       </nav>
     </header>
   );
