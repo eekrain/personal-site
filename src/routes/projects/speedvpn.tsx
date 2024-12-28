@@ -160,18 +160,18 @@ const Page: Component<{}> = (props) => {
 
       <p>
         The hardest part was figuring out how to supports multiple V2ray
-        protocols on 1 server. This feature was crucial, since it will make it
-        easy if the user wanted to change the protocol used. I ended up using
-        both HAProxy and NGINX for the reverse proxy. HAProxy is used to filter
-        out websocket, grpc, splithttp, and reality protocol. There is one
-        protocol that HAProxy couldn't handle, it's http-upgrade (like
-        websocket, but minimal), so from HAProxy I redirect it to NGINX for this
-        spesific protocol. All of VPN server configuration is dynamic, for
-        example the HAProxy & NGINX config is based on DNS Records registered in
-        Database. Also for XRAY (a v2ray server app) and Cloudflare Warp (for
-        better routing to google) configuration is dynamic based on database
-        value that are registered upon installation via nixos-anywhere and
-        Colmena.
+        protocols on 1 server. This feature was crucial, since users have their
+        own preference of which combination of protocol they wanted to use (e.g.
+        trojan-websocket, vless-reality, etc). I ended up using both HAProxy and
+        NGINX for the reverse proxy. HAProxy is used to filter out websocket,
+        grpc, splithttp, and reality protocol. There is one protocol that
+        HAProxy couldn't handle, it's http-upgrade (like websocket, but
+        minimal), so from HAProxy I redirect it to NGINX for this spesific
+        protocol. All of VPN server configuration is dynamic, for example the
+        HAProxy & NGINX config is based on DNS Records registered in Database.
+        Also for XRAY (a v2ray server app) and Cloudflare Warp (for better
+        routing to google) configuration is dynamic based on database value that
+        are registered upon installation via nixos-anywhere and Colmena.
       </p>
 
       <p>
