@@ -1,4 +1,3 @@
-import { BiRegularLinkExternal } from "solid-icons/bi";
 import { Component } from "solid-js";
 import ExternalLinkIcon from "../ExternalLinkIcon";
 
@@ -11,7 +10,7 @@ export const Projects: Component<{}> = (props) => {
 
       <ul class="grid gap-3">
         <li>
-          <a class="group" target="_blank" href="https://speedvpn.me/">
+          <a href="/projects/speedvpn" target="_blank" class="group">
             <h4 class="mb-1 font-poppins text-lg font-medium">
               <span class="group-hover:underline group-hover:underline-offset-4">
                 SpeedVPN
@@ -64,9 +63,15 @@ export const Projects: Component<{}> = (props) => {
         </li>
 
         <li>
-          <h4 class="mb-1 font-poppins text-lg font-medium">
-            Rocket Jaket Cashier (PoS)
-          </h4>
+          <a href="/projects/rocket-jaket-pos" target="_blank" class="group">
+            <h4 class="mb-1 font-poppins text-lg font-medium">
+              <span class="group-hover:underline group-hover:underline-offset-4">
+                Rocket Jaket Cashier (PoS)
+              </span>
+
+              <ExternalLinkIcon class="-mt-1 ml-2 inline-block" />
+            </h4>
+          </a>
 
           <ul class="flex list-disc flex-col space-y-1 text-xs">
             <li>

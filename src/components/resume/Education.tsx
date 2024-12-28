@@ -8,12 +8,11 @@ export const Education: Component<{}> = (props) => {
         EDUCATION
       </h3>
 
-      <ul class="print:print-color-adjust-exact relative grid gap-3 pl-3">
-        <hr class="absolute left-[4px] top-2 h-[93%] w-[1px] bg-title" />
+      <ul class="relative grid gap-3 print:print-color-adjust-exact">
         <li class="relative">
-          <div class="absolute -left-[11px] top-[50%] size-2 rounded-full bg-title" />
-
-          <h4 class="mb-1 font-semibold">Bachelor of Informatics</h4>
+          <h4 class="mb-1 font-poppins font-semibold">
+            Bachelor of Informatics
+          </h4>
           <h5 class="mb-2 text-sm font-medium">
             Universitas Amikom Yogyakarta
           </h5>
@@ -29,10 +28,16 @@ export const Education: Component<{}> = (props) => {
           </div>
         </li>
         <li class="relative">
-          <div class="absolute -left-[11px] top-[50%] size-2 rounded-full bg-title" />
-
-          <h4 class="mb-1 font-semibold">Computer & Network Engineering</h4>
-          <h5 class="text-sm font-medium">SMKN 2 Yogyakarta</h5>
+          <h4 class="mb-1 font-poppins font-semibold">
+            Computer & Network Engineering
+          </h4>
+          <h5 class="mb-2 text-sm font-medium">SMKN 2 Yogyakarta</h5>
+          <div class="flex justify-end">
+            <p class="flex items-baseline space-x-2 text-xs">
+              <IoCalendarOutline />
+              <span>Jul 2013 - May 2016</span>
+            </p>
+          </div>
         </li>
       </ul>
     </div>

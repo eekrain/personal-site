@@ -16,7 +16,7 @@ export const Courses: Component<{}> = (props) => {
             target="_blank"
             href="https://www.udemy.com/certificate/UC-703ca5f1-c8e0-4297-b9a5-38e6cd7abb43/"
           >
-            <h4 class="mb-1 font-semibold">
+            <h4 class="mb-1 font-poppins font-semibold">
               <span class="group-hover:underline group-hover:underline-offset-4">
                 Complete Next.js with React & Node
               </span>
@@ -45,7 +45,7 @@ export const Courses: Component<{}> = (props) => {
             target="_blank"
             href="https://www.udemy.com/certificate/UC-b3198aad-f9fa-4514-95af-887e0bb9aa56/"
           >
-            <h4 class="mb-1 font-semibold">
+            <h4 class="mb-1 font-poppins font-semibold">
               <span class="group-hover:underline group-hover:underline-offset-4">
                 Modern React with Redux
               </span>

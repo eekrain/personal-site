@@ -27,7 +27,7 @@ export const WorkExperience: Component<{}> = (props) => {
             <a
               class="group"
               target="_blank"
-              href="https://www.udemy.com/certificate/UC-b3198aad-f9fa-4514-95af-887e0bb9aa56/"
+              href="https://platon.co.id/?lang=id"
             >
               <h5 class="mb-1 text-sm font-semibold">
                 <span class="group-hover:underline group-hover:underline-offset-4">
