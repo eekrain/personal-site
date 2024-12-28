@@ -1,6 +1,7 @@
 import { A } from "@solidjs/router";
 import { Component, For } from "solid-js";
 import { description } from "valibot";
+import MySiteTitle from "~/components/MySiteTitle";
 import {
   Card,
   CardContent,
@@ -30,38 +31,41 @@ const projects = [
 
 const Page: Component<{}> = (props) => {
   return (
-    <main class="container min-h-screen pt-20">
-      <h1 class="mb-8 text-center font-jakarta text-4xl font-bold text-title">
-        Projects Showcase
-      </h1>
+    <>
+      <MySiteTitle>Projects</MySiteTitle>
+      <main class="container min-h-screen pt-20">
+        <h1 class="mb-8 text-center font-jakarta text-4xl font-bold text-title">
+          Projects Showcase
+        </h1>
 
-      <div class="grid grid-cols-2 gap-8">
-        <For each={projects}>
-          {(item) => (
-            <Card class="grid overflow-hidden">
-              <A href={item.href} class="group grid">
-                <div class="h-[340px] w-full overflow-hidden">
-                  <img
-                    src={item.thumbnail}
-                    class="flex flex-1 object-cover transition-all duration-200 group-hover:scale-110"
-                    alt={item.thumbnailDesc}
-                    title={item.thumbnailDesc}
-                  />
-                </div>
+        <div class="grid grid-cols-2 gap-8">
+          <For each={projects}>
+            {(item) => (
+              <Card class="grid overflow-hidden">
+                <A href={item.href} class="group grid">
+                  <div class="h-[340px] w-full overflow-hidden">
+                    <img
+                      src={item.thumbnail}
+                      class="flex flex-1 object-cover transition-all duration-200 group-hover:scale-110"
+                      alt={item.thumbnailDesc}
+                      title={item.thumbnailDesc}
+                    />
+                  </div>
 
-                <CardHeader>
-                  <CardTitle class="text-3xl">{item.name}</CardTitle>
-                </CardHeader>
+                  <CardHeader>
+                    <CardTitle class="text-3xl">{item.name}</CardTitle>
+                  </CardHeader>
 
-                <CardContent class="self-end">
-                  <p>{item.description}</p>
-                </CardContent>
-              </A>
-            </Card>
-          )}
-        </For>
-      </div>
-    </main>
+                  <CardContent class="self-end">
+                    <p>{item.description}</p>
+                  </CardContent>
+                </A>
+              </Card>
+            )}
+          </For>
+        </div>
+      </main>
+    </>
   );
 };
 
