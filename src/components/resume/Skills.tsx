@@ -8,7 +8,7 @@ export const Skills: Component<{}> = (props) => {
         SKILLS
       </h3>
 
-      <ul class="print:print-color-adjust-exact flex flex-wrap gap-2 text-sm text-white">
+      <ul class="flex flex-wrap gap-2 text-sm text-white print:print-color-adjust-exact">
         <li class="bg-title px-2 py-1">React.js</li>
         <li class="bg-title px-2 py-1">React Native</li>
         <li class="bg-title px-2 py-1">Next.js</li>

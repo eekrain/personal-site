@@ -1,6 +1,5 @@
-import { Component, createSignal, Show } from "solid-js";
+import { Component, createSignal, lazy, Show } from "solid-js";
 import { MyInput } from "~/components/ui/my-input";
-import HCaptcha from "solid-hcaptcha";
 import { Button } from "~/components/ui/button";
 import { FaSolidPaperPlane } from "solid-icons/fa";
 import { createForm, setValue, valiForm } from "@modular-forms/solid";
@@ -13,6 +12,8 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import { FiAlertTriangle, FiCheckCircle } from "solid-icons/fi";
 import { Grid } from "solid-spinner";
+
+const HCaptcha = lazy(() => import("solid-hcaptcha"));
 
 export const ContactForm: Component<{}> = (props) => {
   const sendContact = useAction(sendContactAction);
@@ -118,15 +119,6 @@ export const ContactForm: Component<{}> = (props) => {
           </Show>
         )}
       </Show>
-
-      {/* <Alert>
-        <FiCheckCircle />
-        <AlertTitle>Message Sent!</AlertTitle>
-        <AlertDescription>
-          Your message has been sent! I will reply to your message via email.
-          Thank you for reaching me!
-        </AlertDescription>
-      </Alert> */}
 
       <Button
         type="submit"
