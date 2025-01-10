@@ -1,4 +1,3 @@
-import { IconProps } from "solid-icons";
 import { Component, createEffect, createSignal, Show } from "solid-js";
 import { ContactCard } from "./ContactCard";
 import { FaBrandsFacebookMessenger } from "solid-icons/fa";

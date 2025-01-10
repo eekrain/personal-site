@@ -1,9 +1,9 @@
 import { action } from "@solidjs/router";
-import { verifyHcaptcha } from "~/lib/hcaptcha";
+import { verifyRecaptcha } from "~/lib/hcaptcha";
 import * as v from "valibot";
 import { contactSchema } from "~/lib/contact-schema";
 import { serverEnv } from "~/lib/env";
-import emailjs, { EmailJSResponseStatus } from "@emailjs/nodejs";
+import emailjs from "@emailjs/nodejs";
 import { the } from "~/lib/utils";
 
 export type SendContactResult = { success: boolean; message: string };
@@ -27,9 +27,9 @@ export const sendContactAction = action(
       };
     }
 
-    const captchaRes = await verifyHcaptcha({
+    const captchaRes = await verifyRecaptcha({
       captchaToken: formValues.captchaToken,
-      hcaptchaSecret: serverEnv.HCAPTCHA_SECRET_KEY,
+      hcaptchaSecret: serverEnv.RECAPTCHA_SECRET_KEY,
     });
     // console.log("🚀 ~ captchaRes:", captchaRes);
 

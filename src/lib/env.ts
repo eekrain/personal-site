@@ -5,7 +5,7 @@ const serverEnvSchema = v.object({
   EMAILJS_PRIVATE_KEY: v.pipe(v.string(), v.minLength(1)),
   EMAILJS_SERVICE_ID: v.pipe(v.string(), v.minLength(1)),
   EMAILJS_TEMPLATE_ID: v.pipe(v.string(), v.minLength(1)),
-  HCAPTCHA_SECRET_KEY: v.pipe(v.string(), v.minLength(1)),
+  RECAPTCHA_SECRET_KEY: v.pipe(v.string(), v.minLength(1)),
 });
 type ServerEnvSchema = v.InferOutput<typeof serverEnvSchema>;
 

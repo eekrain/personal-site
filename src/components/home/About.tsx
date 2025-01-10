@@ -21,9 +21,14 @@ const HomeAbout: Component<{}> = (props) => {
       <h2 class="text-center text-4xl text-title">About Me</h2>
       <span class="mb-12 block text-center lg:mb-16">My introduction</span>
       <div class="container mx-auto grid grid-cols-1 items-center gap-y-10 xl:grid-cols-2 xl:gap-x-16">
-        <div class="h-[250px] max-w-[200px] justify-self-center overflow-clip rounded-3xl xl:h-full xl:max-w-[350px]">
-          <img src="/img/profile_picture.jpg" alt="Main profile image" />
-        </div>
+        <picture class="h-[250px] max-w-[200px] justify-self-center overflow-clip rounded-3xl xl:h-full xl:max-w-[350px]">
+          <img
+            sizes="(max-width: 1000px) 40vw, 400px"
+            srcset="/img/profile_picture_200.webp 200w,/img/profile_picture_400.webp 400w"
+            src="profile_picture_400.webp"
+            alt="Main profile image"
+          />
+        </picture>
         <div class="text-center xl:text-start">
           <div class="mb-8 grid grid-cols-2 justify-center gap-x-2 gap-y-2">
             <div class="rounded-xl border border-gray-100 bg-white px-2 py-3 text-center xl:px-5 xl:py-4">

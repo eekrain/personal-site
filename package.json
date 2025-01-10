@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "preview": "vinxi build && vinxi start"
   },
   "dependencies": {
     "@emailjs/nodejs": "^5.0.2",
@@ -22,6 +23,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "postcss": "^8.4.38",
+    "solid-grecaptcha": "^0.1.6",
     "solid-hcaptcha": "^1.0.0",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.9.2",

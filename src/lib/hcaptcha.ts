@@ -8,12 +8,12 @@ type CaptchaError = {
   errorCodes?: string;
 };
 
-export const verifyHcaptcha = async (input: {
+export const verifyRecaptcha = async (input: {
   captchaToken: string;
   hcaptchaSecret: string;
 }): Promise<CaptchaSuccess | CaptchaError> => {
   const [verifyRes, verifyError] = await the(
-    fetch("https://hcaptcha.com/siteverify", {
+    fetch("https://www.google.com/recaptcha/api/siteverify", {
       body: new URLSearchParams({
         response: input.captchaToken,
         secret: input.hcaptchaSecret,
@@ -29,11 +29,11 @@ export const verifyHcaptcha = async (input: {
       success: false,
     };
 
-  const data = await verifyRes.json();
-  console.log("🚀 ~ data:", data);
+  const captchaRes = await verifyRes.json();
+  console.log("🚀 ~ captchaRes:", captchaRes);
 
-  if (!data.success) {
-    const errorCodes = data["error-codes"];
+  if (!captchaRes.success) {
+    const errorCodes = captchaRes["error-codes"];
     console.error("🚀 ~ errorCodes:", errorCodes);
     return {
       success: false,
@@ -42,6 +42,6 @@ export const verifyHcaptcha = async (input: {
   }
 
   return {
-    success: data.success,
+    success: captchaRes.success,
   };
 };

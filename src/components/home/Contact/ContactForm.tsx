@@ -13,7 +13,8 @@ import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import { FiAlertTriangle, FiCheckCircle } from "solid-icons/fi";
 import { Grid } from "solid-spinner";
 
-const HCaptcha = lazy(() => import("solid-hcaptcha"));
+// const HCaptcha = lazy(() => import("solid-hcaptcha"));
+import GRecaptcha from "solid-grecaptcha";
 
 export const ContactForm: Component<{}> = (props) => {
   const sendContact = useAction(sendContactAction);
@@ -85,8 +86,8 @@ export const ContactForm: Component<{}> = (props) => {
         {(field, props) => (
           <div class="mx-auto mt-4 lg:mx-0">
             <input type="hidden" value={field.value} {...props} />
-            <HCaptcha
-              sitekey={import.meta.env.VITE_HCAPTCHA_SITE_KEY}
+            <GRecaptcha
+              siteKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
               onVerify={(token) => {
                 setValue(contactForm, "captchaToken", token);
               }}
