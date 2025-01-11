@@ -19,10 +19,6 @@ const Nav: Component<{}> = (props) => {
   const location = useLocation();
   const [toggleMenu, setToggleMenu] = createSignal(false);
 
-  createEffect(() => {
-    console.log("🚀 ~ createEffect ~ location.pathname:", location.pathname);
-  });
-
   return (
     <header
       class={cn(
@@ -87,7 +83,10 @@ export const NavItem: ParentComponent<{
   icon: JSX.Element;
   href: string;
 }> = (props) => {
-  const active = () => currentPage() === props.href;
+  const active = () => {
+    const curr = currentPage();
+    return curr && props.href.includes(curr);
+  };
 
   return (
     <li class="flex flex-col items-center text-sm font-medium text-gray-600">

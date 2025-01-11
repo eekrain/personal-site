@@ -2,13 +2,13 @@ import { Component, For } from "solid-js";
 import MySiteTitle from "~/components/MySiteTitle";
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "~/components/ui/breadcrumb";
 import { Card, CardContent } from "~/components/ui/card";
+import { setCurrentPage } from "~/lib/page-state";
 
 const images = [
   { name: "Login screen", src: "/projects/rocket-jaket-pos/1_login.png" },
@@ -55,6 +55,8 @@ const images = [
 ];
 
 const Page: Component<{}> = (props) => {
+  setCurrentPage("/projects");
+
   return (
     <>
       <MySiteTitle>Rocket Jaket Cashier (PoS)</MySiteTitle>

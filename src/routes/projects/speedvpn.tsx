@@ -7,8 +7,11 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "~/components/ui/breadcrumb";
+import { setCurrentPage } from "~/lib/page-state";
 
 const Page: Component<{}> = (props) => {
+  setCurrentPage("/projects");
+
   return (
     <>
       <MySiteTitle>SpeedVPN</MySiteTitle>

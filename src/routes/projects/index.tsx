@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
+import { setCurrentPage } from "~/lib/page-state";
 
 const projects = [
   {
@@ -30,6 +31,8 @@ const projects = [
 ];
 
 const Page: Component<{}> = (props) => {
+  setCurrentPage("/projects");
+
   return (
     <>
       <MySiteTitle>Projects</MySiteTitle>

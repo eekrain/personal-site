@@ -5,8 +5,10 @@ import { Education } from "./Education";
 import { Skills } from "./Skills";
 import { Courses } from "./Courses";
 import { Projects } from "./Projects";
+import { setCurrentPage } from "~/lib/page-state";
 
 const ResumePage: Component<{}> = (props) => {
+  setCurrentPage(null);
   return (
     <div>
       <Header />
