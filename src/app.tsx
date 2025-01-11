@@ -24,9 +24,11 @@ export default function App() {
     <Router
       root={(props) => (
         <MetaProvider>
-          <Nav />
-          <Suspense>{props.children}</Suspense>
-          <Footer />
+          <Suspense>
+            <Nav />
+            {props.children}
+            <Footer />
+          </Suspense>
         </MetaProvider>
       )}
     >
