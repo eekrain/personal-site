@@ -116,7 +116,7 @@ export default {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
-        "profile-animate": {
+        "profile-picture": {
           "0%": {
             borderRadius: "60% 40% 30% 70%/60% 30% 70% 40%",
           },
@@ -142,7 +142,7 @@ export default {
         "content-show": "content-show 0.2s ease-out",
         "content-hide": "content-hide 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "profile-animate": "profile-animate 8s ease-in-out infinite 1s",
+        "profile-picture": "profile-picture 8s ease-in-out infinite 1s",
         scroll: "scroll 2s ease infinite",
       },
     },
